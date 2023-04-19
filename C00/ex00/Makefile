@@ -20,17 +20,17 @@ YELLOW	=	\033[0;33m
 ######	Commands	######
 
 all:	$(NAME)
-	$(CC) $(CFLAGS) $<.cpp -o $< 
 
-clean: fclean
-	@echo $(YELLOW) $(NAME) Wiped out $(RESET)🗑
-
-fclean:	clean
+$(NAME):
+	@$(CC) $(CFLAGS) $@.cpp -o $@ 
+	@echo "$(GREEN) $(NAME) created$(RESET)🗑"
+	
+clean:
+	@echo "$(YELLOW) $(NAME) Wiped out $(RESET)🗑"
 	@rm -rf $(NAME)
 
-re: fclean all
+fclean:	clean
 
-valgrind:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --trace-children=yes --track-fds=yes ./minishell
+re: fclean all
 
 .PHONY: re, fclean, clean, all

@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 17:25:06 by gusousa           #+#    #+#             */
-/*   Updated: 2023/04/19 17:25:59 by gusousa          ###   ########.fr       */
+/*   Updated: 2023/04/19 17:52:07 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@
 
 class PhoneBook {
 	private:
-		//Contact	contacs[8];
-		int	numContacts;
-		//int	oldestContactIndex = 0;
+		Contact	listContacts[8];
+		int		totalContacts;
+		int		oldestContactIndex;
+
+	public:
+		void	add(Contact new_contact);
+		void	search(std::string name);
+		void	exit( void );
 };
 
 #endif

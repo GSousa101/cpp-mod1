@@ -6,11 +6,17 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 15:29:17 by gusousa           #+#    #+#             */
-/*   Updated: 2023/04/19 15:29:23 by gusousa          ###   ########.fr       */
+/*   Updated: 2023/04/19 16:04:09 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Contact.hpp"
+
+
+Contact::Contact(const std::string& name, const std::string& phoneNumber)
+    : name_(name), phoneNumber_(phoneNumber) {}
+
+Contact::~Contact() {}
 
 void Contact::setFirstName(std::string value) {
   this->_first_name = value;

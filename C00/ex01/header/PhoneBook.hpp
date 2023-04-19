@@ -1,21 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/19 17:25:06 by gusousa           #+#    #+#             */
+/*   Updated: 2023/04/19 17:25:59 by gusousa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-
-class Contact {
-	private:
-
-	public:
-		std::string	name;
-		str::string	phoneNumber;
-};
+#include "Contact.hpp"
 
 class PhoneBook {
 	private:
-		Contact	contacs[8];
+		//Contact	contacs[8];
 		int	numContacts;
-		int	oldestContactIndex = 0;
+		//int	oldestContactIndex = 0;
 };
 
 #endif

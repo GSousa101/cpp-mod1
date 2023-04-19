@@ -1,10 +1,15 @@
-NAME		=	megaphone	
+NAME		=	deathNote
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####
 CC		:=	c++
-CFLAGS	:=	-Wextra -Wall -Werror -std=c++98
+CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
+####	Source & Objects
+FILES		:=	PhoneBook.cpp	Contact.cpp
+
+SOURCE		:=	$(addprefix source/, $(FILES))	\
+				main.cpp
 # Colors
 BLACK	=	\033[0;30m
 BLUE	=	\033[0;34m
@@ -22,8 +27,8 @@ YELLOW	=	\033[0;33m
 all:	$(NAME)
 
 $(NAME):
-	@$(CC) $(CFLAGS) $@.cpp -o $@ 
-	@echo "$(GREEN) $(NAME) created$(RESET)🗑"
+	@$(CC) $(CPPFLAGS) $(SOURCE) -o $@ 
+	@echo "$(GREEN) $(NAME) created$(RESET)"
 	
 clean:
 	@echo "$(YELLOW) $(NAME) Wiped out $(RESET)🗑"

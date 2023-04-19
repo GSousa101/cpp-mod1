@@ -19,5 +19,5 @@ int main(int argc, char **argv)
 		std::cout << std::endl;
 	}
   	else
-  		std::cout << "STRANGE NOISY" << std::endl;
+  		std::cout << "* LOUD AND UBEARABLE FEEDBACK NOISE *" << std::endl;
 }

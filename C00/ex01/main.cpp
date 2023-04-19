@@ -3,5 +3,6 @@
 
 int	main(void)
 {
+	Contact pedro;
 	return (0);
 }

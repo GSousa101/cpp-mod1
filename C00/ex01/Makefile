@@ -24,7 +24,7 @@ YELLOW	=	\033[0;33m
 
 ######	Commands	######
 
-all:	$(NAME)
+all:	$(NAME) $(SOURCE)
 
 $(NAME):
 	@$(CC) $(CPPFLAGS) $(SOURCE) -o $@ 

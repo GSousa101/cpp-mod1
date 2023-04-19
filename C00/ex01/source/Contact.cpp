@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 15:29:17 by gusousa           #+#    #+#             */
-/*   Updated: 2023/04/19 17:40:15 by gusousa          ###   ########.fr       */
+/*   Updated: 2023/04/19 18:21:26 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <iostream>
 
 Contact::Contact(void) {
-	std::cout << "Destructor from Contact called" << std::endl;
-
+	std::cout << "Constructor from Contact called" << std::endl;
 }
 
 Contact::~Contact(void) {
@@ -42,22 +41,22 @@ void Contact::setDarkestSecret(std::string value) {
   this->_darkestSecret = value;
 }
 
-std::string Contact::getFirstName() {
+std::string Contact::getFirstName( void ) {
   return this->_firstName;
 }
 
-std::string Contact::getLastName() {
+std::string Contact::getLastName( void ) {
   return this->_lastName;
 }
 
-std::string Contact::getNickname() {
+std::string Contact::getNickname( void ) {
   return this->_nickname;
 }
 
-std::string Contact::getPhoneNumber() {
+std::string Contact::getPhoneNumber( void ) {
   return this->_phoneNumber;
 }
 
-std::string Contact::getDarkestSecret() {
+std::string Contact::getDarkestSecret( void ) {
   return this->_darkestSecret;
 }

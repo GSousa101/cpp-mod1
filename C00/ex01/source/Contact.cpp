@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Contact.hpp"
+#include "../include/Contact.hpp"
 #include <iostream>
 
 Contact::Contact(void) {

@@ -18,12 +18,11 @@
 class PhoneBook {
 	private:
 		Contact	listContacts[8];
-		int		totalContacts;
-		int		oldestContactIndex;
+		int	totalContacts;
 
 	public:
 		void	add(Contact new_contact);
-		void	search(std::string name);
+		void	search( void );
 		void	exit( void );
 };
 

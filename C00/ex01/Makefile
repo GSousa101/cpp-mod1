@@ -24,9 +24,9 @@ YELLOW	=	\033[0;33m
 
 ######	Commands	######
 
-all:	$(NAME) $(SOURCE)
+all:	$(NAME)
 
-$(NAME):
+$(NAME): $(SOURCE)
 	@$(CC) $(CPPFLAGS) $(SOURCE) -o $@ 
 	@echo "$(GREEN) $(NAME) created$(RESET)"
 	

@@ -44,9 +44,7 @@ void	PhoneBook::add( void ) {
 		std::getline(std::cin, input);
 		this->listContacts[totalContacts].setDarkestSecret(input);
 	}
-	this->totalContacts++;
-	if (this->totalContacts == 4)
-		this->totalContacts = 0;
+	this->totalContacts = (this->totalContacts + 1) % 4;
 }
 
 void	printHeader(void) {

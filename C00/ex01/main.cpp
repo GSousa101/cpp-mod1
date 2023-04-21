@@ -12,14 +12,15 @@ int	main(void)
 
 	eminem.setFirstName("Eminem");
 	eminem.setNickname("SlimShady");
-	eminem1.setFirstName("Eminem");
-	eminem1.setNickname("SlimShady");
-	eminem2.setFirstName("Eminem");
-	eminem2.setNickname("SlimShady");
-	eminem3.setFirstName("Eminem");
-	eminem3.setNickname("SlimShady");
-	eminem4.setFirstName("Eminem");
-	eminem4.setNickname("SlimShady");
+	eminem1.setFirstName("Tassio");
+	eminem1.setNickname("Tata");
+	eminem2.setFirstName("Cisto");
+	eminem2.setNickname("Tito");
+	eminem3.setFirstName("Cleto");
+	eminem3.setNickname("Toto");
+	eminem4.setFirstName("Cornélio");
+	eminem4.setLastName("Cipriano");
+	eminem4.setNickname("Abelha");
 	std::cout << "My name " << eminem.getFirstName() << std::endl;
 	agenda.add(eminem);
 	agenda.add(eminem1);

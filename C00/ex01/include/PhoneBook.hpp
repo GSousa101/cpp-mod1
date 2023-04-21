@@ -21,6 +21,8 @@ class PhoneBook {
 		int	totalContacts;
 
 	public:
+		PhoneBook( void );
+		~PhoneBook( void );
 		void	add(Contact new_contact);
 		void	search( void );
 		void	exit( void );

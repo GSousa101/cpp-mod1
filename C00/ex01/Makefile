@@ -1,4 +1,4 @@
-NAME		=	deathNote
+NAME		=	myAwesomePhoneBook
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####

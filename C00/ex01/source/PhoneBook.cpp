@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/PhoneBook.hpp"
 #include  <iomanip>
+#include <cctype>
 
 PhoneBook::PhoneBook( void ) : totalContacts(0) {
 	std::cout << "Constructor from phoneBook called" << std::endl;
@@ -69,13 +70,13 @@ void	PhoneBook::search( void ) {
 	}
 	std::cout << "type a number to choose a contact" << std::endl;
 	std::cin >> choice;
-	if (std::isdigit(choice) && choice > 0 && choice <= this->totalContacts)
+	if (choice > 0 && choice <= this->totalContacts)
 	{
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getFirstName() << "|";
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getLastName() << "|";
-		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << std::endl;
-		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << std::endl;
-		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << std::endl;
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << "|";
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getPhoneNumber() << "|";
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getDarkestSecret() << std::endl;
 	}
 }
 

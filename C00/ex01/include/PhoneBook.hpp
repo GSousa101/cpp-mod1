@@ -26,7 +26,6 @@ class PhoneBook {
 		void	add( void );
 		void	search( void );
 		void	exit( void );
-		void	printHeader ( void );
 };
 
 #endif

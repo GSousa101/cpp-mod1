@@ -33,11 +33,11 @@ class Contact {
 		void setPhoneNumber(std::string value);
 		void setDarkestSecret(std::string value);
 
-		std::string getFirstName();
-		std::string getLastName();
-		std::string getNickname();
-		std::string getPhoneNumber();
-		std::string getDarkestSecret();
+		std::string getFirstName() const;
+		std::string getLastName() const;
+		std::string getNickname() const;
+		std::string getPhoneNumber() const;
+		std::string getDarkestSecret() const;
 };
 
 #endif

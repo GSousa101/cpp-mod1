@@ -11,39 +11,56 @@ PhoneBook::~PhoneBook( void ) {
 }
 
 void	PhoneBook::add( void ) {
-//	this->listContacts[totalContacts] = newContact;
-	//Contact::setFirstName(std::cin >>);
+	 std::string input;
+
+	std::cout << "Enter the first name: ";
+	std::getline(std::cin, input);
+	this->listContacts[totalContacts].setFirstName(input);
+	std::cout << "Enter the last name: ";
+	std::getline(std::cin, input);
+	this->listContacts[totalContacts].setLastName(input);
+	std::cout << "Enter the nickame: ";
+	std::getline(std::cin, input);
+	this->listContacts[totalContacts].setNickname(input);
+	std::cout << "Enter the phone number: ";
+	std::getline(std::cin, input);
+	this->listContacts[totalContacts].setPhoneNumber(input);
+	std::cout << "Enter the darkest secret: ";
+	std::getline(std::cin, input);
+	this->listContacts[totalContacts].setDarkestSecret(input);
 	this->totalContacts++;
-	if (this->totalContacts == 7)
+	if (this->totalContacts == 8)
 		this->totalContacts = 0;
 }
 
-void	PhoneBook::printHeader(void) {
+void	printHeader(void) {
 	std::cout << std::endl;
-	std::cout << std::setw(10) << std::left << "INDEX" << "|";
-	std::cout << std::setw(10) << std::left << "FIRST NAME" << "|";
-	std::cout << std::setw(10) << std::left << "LAST NAME" << "|";
-	std::cout << std::setw(10) << std::left << "NICKNAME" << std::endl;
+	std::cout << std::setw(10) << std::right << "INDEX" << "|";
+	std::cout << std::setw(10) << std::right << "FIRST NAME" << "|";
+	std::cout << std::setw(10) << std::right << "LAST NAME" << "|";
+	std::cout << std::setw(10) << std::right << "NICKNAME" << std::endl;
 }
 
 void	PhoneBook::search( void ) {
 	int	choice;
 
-	PhoneBook::printHeader();
+	printHeader();
 	for (int i = 0; i < this->totalContacts; i++)
 	{
-		std::cout << std::setw(10) << std::left << i + 1 << "|";
-		std::cout << std::setw(10) << std::left << this->listContacts[i].getFirstName() << "|";
-		std::cout << std::setw(10) << std::left << this->listContacts[i].getLastName() << "|";
-		std::cout << std::setw(10) << std::left << this->listContacts[i].getNickname() << std::endl;
+		std::cout << std::setw(10) << std::right << i + 1 << "|";
+		std::cout << std::setw(10) << std::right << this->listContacts[i].getFirstName() << "|";
+		std::cout << std::setw(10) << std::right << this->listContacts[i].getLastName() << "|";
+		std::cout << std::setw(10) << std::right << this->listContacts[i].getNickname() << std::endl;
 	}
 	std::cout << "type a number to chosse a contact" << std::endl;
 	std::cin >> choice;
 	if (std::isdigit(choice) && choice > 0 && choice <= this->totalContacts)
 	{
-		std::cout << std::setw(10) <<  std::left << this->listContacts[choice - 1].getFirstName() << "|";
-		std::cout << std::setw(10) <<  std::left << this->listContacts[choice - 1].getLastName() << "|";
-		std::cout << std::setw(10) <<  std::left << this->listContacts[choice - 1].getNickname() << std::endl;
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getFirstName() << "|";
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getLastName() << "|";
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << std::endl;
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << std::endl;
+		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << std::endl;
 	}
 }
 

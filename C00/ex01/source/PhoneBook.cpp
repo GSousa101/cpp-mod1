@@ -13,21 +13,36 @@ PhoneBook::~PhoneBook( void ) {
 void	PhoneBook::add( void ) {
 	 std::string input;
 
-	std::cout << "Enter the first name: ";
-	std::getline(std::cin, input);
-	this->listContacts[totalContacts].setFirstName(input);
-	std::cout << "Enter the last name: ";
-	std::getline(std::cin, input);
-	this->listContacts[totalContacts].setLastName(input);
-	std::cout << "Enter the nickame: ";
-	std::getline(std::cin, input);
-	this->listContacts[totalContacts].setNickname(input);
-	std::cout << "Enter the phone number: ";
-	std::getline(std::cin, input);
-	this->listContacts[totalContacts].setPhoneNumber(input);
-	std::cout << "Enter the darkest secret: ";
-	std::getline(std::cin, input);
-	this->listContacts[totalContacts].setDarkestSecret(input);
+	while (input.empty()) {
+		std::cout << "You chose to add someone in the agenda\nEnter the first name: ";
+		std::getline(std::cin, input);
+		this->listContacts[totalContacts].setFirstName(input);
+	}
+	input.clear();
+	while (input.empty()) {
+		std::cout << "Enter the last name: ";
+		std::getline(std::cin, input);
+		this->listContacts[totalContacts].setLastName(input);
+	}
+	input.clear();
+	while (input.empty()) {
+		input.clear();
+		std::cout << "Enter the nickame: ";
+		std::getline(std::cin, input);
+		this->listContacts[totalContacts].setNickname(input);
+	}
+	input.clear();
+	while (input.empty()) {
+		std::cout << "Enter the phone number: ";
+		std::getline(std::cin, input);
+		this->listContacts[totalContacts].setPhoneNumber(input);
+	}
+	input.clear();
+	while (input.empty()) {
+		std::cout << "Enter the darkest secret: ";
+		std::getline(std::cin, input);
+		this->listContacts[totalContacts].setDarkestSecret(input);
+	}
 	this->totalContacts++;
 	if (this->totalContacts == 8)
 		this->totalContacts = 0;
@@ -52,7 +67,7 @@ void	PhoneBook::search( void ) {
 		std::cout << std::setw(10) << std::right << this->listContacts[i].getLastName() << "|";
 		std::cout << std::setw(10) << std::right << this->listContacts[i].getNickname() << std::endl;
 	}
-	std::cout << "type a number to chosse a contact" << std::endl;
+	std::cout << "type a number to choose a contact" << std::endl;
 	std::cin >> choice;
 	if (std::isdigit(choice) && choice > 0 && choice <= this->totalContacts)
 	{

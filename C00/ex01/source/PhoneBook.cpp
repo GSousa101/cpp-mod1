@@ -23,7 +23,7 @@ void	PhoneBook::printHeader(void) {
 	std::cout << std::setw(10) << std::left << "INDEX" << "|";
 	std::cout << std::setw(10) << std::left << "FIRST NAME" << "|";
 	std::cout << std::setw(10) << std::left << "LAST NAME" << "|";
-	std::cout << std::setw(10) << std::left << "NICKNAME" << "|" << std::endl;
+	std::cout << std::setw(10) << std::left << "NICKNAME" << std::endl;
 }
 
 void	PhoneBook::search( void ) {
@@ -39,9 +39,11 @@ void	PhoneBook::search( void ) {
 	}
 	std::cout << "type a number to chosse a contact" << std::endl;
 	std::cin >> choice;
+	if (std::isdigit(choice) && choice > 0 && choice <= this->totalContacts)
+	{
 		std::cout << std::setw(10) << this->listContacts[choice - 1].getFirstName() << " | "	\
 		<< std::setw(10) << this->listContacts[choice - 1].getLastName() << " | "		\
 		<< std::setw(10) << this->listContacts[choice - 1].getNickname() << std::endl;
-	
+	}
 }
 

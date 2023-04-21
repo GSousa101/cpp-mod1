@@ -68,15 +68,20 @@ void	PhoneBook::search( void ) {
 		std::cout << std::setw(10) << std::right << this->listContacts[i].getLastName() << "|";
 		std::cout << std::setw(10) << std::right << this->listContacts[i].getNickname() << std::endl;
 	}
+	std::cout << std::endl;
 	std::cout << "type a number to choose a contact" << std::endl;
 	std::cin >> choice;
 	if (choice > 0 && choice <= this->totalContacts)
 	{
+		std::cout << std::endl;
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getFirstName() << "|";
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getLastName() << "|";
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getNickname() << "|";
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getPhoneNumber() << "|";
 		std::cout << std::setw(10) <<  std::right << this->listContacts[choice - 1].getDarkestSecret() << std::endl;
+		std::cout << std::endl;
 	}
+	else
+		std::cout << "Invalid index. Be cautius and try another one" << std::endl;
 }
 

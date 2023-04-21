@@ -23,9 +23,10 @@ class PhoneBook {
 	public:
 		PhoneBook( void );
 		~PhoneBook( void );
-		void	add(Contact new_contact);
+		void	add( void );
 		void	search( void );
 		void	exit( void );
+		void	printHeader ( void );
 };
 
 #endif

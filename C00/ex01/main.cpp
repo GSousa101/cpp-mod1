@@ -11,22 +11,19 @@ int	main(void)
 	PhoneBook	agenda;
 
 	eminem.setFirstName("Eminem");
+	/*
 	eminem.setNickname("SlimShady");
-	eminem1.setFirstName("Tassio");
-	eminem1.setNickname("Tata");
+	eminem1.setFirstName("Agueda");
+	eminem1.setNickname("Luzia");
 	eminem2.setFirstName("Cisto");
-	eminem2.setNickname("Tito");
+	eminem2.setNickname("Andre");
 	eminem3.setFirstName("Cleto");
-	eminem3.setNickname("Toto");
-	eminem4.setFirstName("Cornélio");
+	eminem3.setNickname("Ines");
+	eminem4.setFirstName("Cornelio");
 	eminem4.setLastName("Cipriano");
-	eminem4.setNickname("Abelha");
-	std::cout << "My name " << eminem.getFirstName() << std::endl;
-	agenda.add(eminem);
-	agenda.add(eminem1);
-	agenda.add(eminem2);
-	agenda.add(eminem3);
-	agenda.add(eminem4);
+	eminem4.setNickname("Anastasia");
+	*/
+	agenda.add();
 	agenda.search();
 	return (0);
 }

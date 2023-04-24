@@ -72,7 +72,8 @@ void	PhoneBook::printAllInformation ( int choice )
 }
 
 void	PhoneBook::search( void ) {
-	int	choice;
+	std::string	input;
+	int		choice;
 
 	printHeader();
 	for (int i = 0; i < this->totalContacts; i++)
@@ -84,11 +85,16 @@ void	PhoneBook::search( void ) {
 		std::cout << std::endl;
 	}
 	std::cout << std::endl << "type a number to choose a contact: ";
-	std::cin >> choice;
-	choice -= 1;
-	if (choice >= 0 && choice < this->totalContacts)
-		printAllInformation(choice);
-	else
-		std::cout << "Invalid index. Be cautius and try another one." << std::endl;
+	std::getline(std::cin, input);
+	try {
+		choice = std::stoi(input) - 1;
+		if (choice >= 0 && choice < this->totalContacts)
+			printAllInformation(choice);
+		else
+			std::cout << "Invalid index. Be cautius and try another one." << std::endl;
+	} catch (...) {
+	    std::cout << "Invalid input. Please enter a number." << std::endl;
+	}
+
 }
 

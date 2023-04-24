@@ -13,13 +13,9 @@
 #include "../include/Contact.hpp"
 #include <iostream>
 
-Contact::Contact(void) {
-	std::cout << "Constructor from Contact called" << std::endl;
-}
+Contact::Contact(void) {}
 
-Contact::~Contact(void) {
-	std::cout << "Destructor from Contact called" << std::endl;
-}
+Contact::~Contact(void) {}
 
 void Contact::setFirstName(std::string value) {
   this->_firstName = value;

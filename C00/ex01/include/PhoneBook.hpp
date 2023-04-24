@@ -19,13 +19,13 @@ class PhoneBook {
 	private:
 		Contact	listContacts[8];
 		int	totalContacts;
+		int	oldestContact;
 
 	public:
 		PhoneBook( void );
 		~PhoneBook( void );
 		void	add( void );
 		void	search( void );
-		void	exit( void );
 };
 
 #endif

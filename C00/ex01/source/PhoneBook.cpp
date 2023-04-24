@@ -11,39 +11,39 @@ PhoneBook::~PhoneBook( void ) {}
 void	PhoneBook::add( void ) {
 	 std::string input;
 
-	while (input.empty()) {
+	while (input.empty() && !std::cin.eof()) {
 		std::cout << "You chose to add someone in the agenda\nEnter the first name: ";
 		std::getline(std::cin, input);
 		this->listContacts[oldestContact].setFirstName(input);
 	}
 	input.clear();
-	while (input.empty()) {
+	while (input.empty() && !std::cin.eof()) {
 		std::cout << "Enter the last name: ";
 		std::getline(std::cin, input);
 		this->listContacts[oldestContact].setLastName(input);
 	}
 	input.clear();
-	while (input.empty()) {
+	while (input.empty() && !std::cin.eof()) {
 		input.clear();
 		std::cout << "Enter the nickame: ";
 		std::getline(std::cin, input);
 		this->listContacts[oldestContact].setNickname(input);
 	}
 	input.clear();
-	while (input.empty()) {
+	while (input.empty() && !std::cin.eof()) {
 		std::cout << "Enter the phone number: ";
 		std::getline(std::cin, input);
 		this->listContacts[oldestContact].setPhoneNumber(input);
 	}
 	input.clear();
-	while (input.empty()) {
+	while (input.empty() && !std::cin.eof()) {
 		std::cout << "Enter the darkest secret: ";
 		std::getline(std::cin, input);
 		this->listContacts[oldestContact].setDarkestSecret(input);
 	}
-	if (this->totalContacts < 4)
+	if (this->totalContacts < 8)
 		this->totalContacts++;
-	this->oldestContact = (oldestContact + 1) % 4;
+	this->oldestContact = (oldestContact + 1) % 8;
 }
 
 static void	printHeader(void) {

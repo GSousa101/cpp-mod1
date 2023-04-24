@@ -6,7 +6,7 @@ int	main(void)
 	PhoneBook	agenda;
 	std::string	input;
 
-	while (42) {
+	while (42 && !std::cin.eof()) {
 		std::cout << "Welcome to the agenda" << std::endl;
 		std::cout << "Choose what you want: ADD, SEARCH or EXIT: ";
 		std::getline(std::cin, input);

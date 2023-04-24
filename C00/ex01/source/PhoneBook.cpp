@@ -3,6 +3,7 @@
 #include "../include/PhoneBook.hpp"
 #include  <iomanip>
 #include <cctype>
+#include <cstdlib>
 
 PhoneBook::PhoneBook( void ) : totalContacts(0), oldestContact(0) {}
 
@@ -86,15 +87,11 @@ void	PhoneBook::search( void ) {
 	}
 	std::cout << std::endl << "type a number to choose a contact: ";
 	std::getline(std::cin, input);
-	try {
-		choice = std::stoi(input) - 1;
-		if (choice >= 0 && choice < this->totalContacts)
-			printAllInformation(choice);
-		else
-			std::cout << "Invalid index. Be cautius and try another one." << std::endl;
-	} catch (...) {
-	    std::cout << "Invalid input. Please enter a number." << std::endl;
-	}
+	choice = std::atoi(input.c_str());
+	if (choice > 0 && choice <= this->totalContacts)
+		printAllInformation(choice - 1);
+	else
+		std::cout << "Invalid index. Be cautius and try another one." << std::endl;
 
 }
 

@@ -4,13 +4,9 @@
 #include  <iomanip>
 #include <cctype>
 
-PhoneBook::PhoneBook( void ) : totalContacts(0), oldestContact(0) {
-	std::cout << "Constructor from phoneBook called" << std::endl;
-}
+PhoneBook::PhoneBook( void ) {}
 
-PhoneBook::~PhoneBook( void ) {
-	std::cout << "Destructur from phoneBook called" << std::endl;
-}
+PhoneBook::~PhoneBook( void ) {}
 
 void	PhoneBook::add( void ) {
 	 std::string input;

@@ -7,7 +7,8 @@ int	main(void)
 	std::string	input;
 
 	while (42) {
-		std::cout << "Welcome to the agenda.\nChoose what you want: ADD, SEARCH or EXIT: ";
+		std::cout << "Welcome to the agenda" << std::endl;
+		std::cout << "Choose what you want: ADD, SEARCH or EXIT: ";
 		std::getline(std::cin, input);
 		if (input == "ADD")
 			agenda.add();

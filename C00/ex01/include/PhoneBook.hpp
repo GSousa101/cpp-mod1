@@ -16,16 +16,16 @@
 #include "Contact.hpp"
 
 class PhoneBook {
-	private:
-		Contact	listContacts[8];
-		int	totalContacts;
-		int	oldestContact;
+private:
+	Contact	listContacts[8];
+	int	totalContacts;
+	int	oldestContact;
 
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
-		void	add( void );
-		void	search( void );
+public:
+	PhoneBook( void );
+	~PhoneBook( void );
+	void	add( void );
+	void	search( void );
 };
 
 #endif

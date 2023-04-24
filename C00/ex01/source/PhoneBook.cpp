@@ -46,7 +46,7 @@ void	PhoneBook::add( void ) {
 	this->oldestContact = (oldestContact + 1) % 4;
 }
 
-void	printHeader(void) {
+static void	printHeader(void) {
 	std::cout << std::endl;
 	std::cout << std::setw(10) << std::right << "INDEX" << "|";
 	std::cout << std::setw(10) << std::right << "FIRST NAME" << "|";
@@ -54,10 +54,21 @@ void	printHeader(void) {
 	std::cout << std::setw(10) << std::right << "NICKNAME" << "|" << std::endl;
 }
 
-void	printColumn( std::string info ) {
+static void	printColumn( std::string info ) {
 	if (info.length() > 10)
 		info = info.substr(0, 9) + ".";
 	std::cout << std::setw(10) << std::right << info << "|";
+}
+
+static void	printAllInformationt ( int choice )
+{
+	std::cout << std::endl;
+	std::cout << "First name:\t" << this->listContacts[choice].getFirstName() << std::endl;
+	std::cout << "Last name:\t" << this->listContacts[choice].getLastName() << std::endl;
+	std::cout << "Nickname:\t" << this->listContacts[choice].getNickname() << std::endl;
+	std::cout << "Phone number:\t" << this->listContacts[choice].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret:\t" << this->listContacts[choice].getDarkestSecret() << std::endl;
+	std::cout << std::endl;
 }
 
 void	PhoneBook::search( void ) {
@@ -76,15 +87,7 @@ void	PhoneBook::search( void ) {
 	std::cin >> choice;
 	choice -= 1;
 	if (choice >= 0 && choice < this->totalContacts)
-	{
-		std::cout << std::endl;
-		std::cout << "First name:\t" << this->listContacts[choice].getFirstName() << std::endl;
-		std::cout << "Last name:\t" << this->listContacts[choice].getLastName() << std::endl;
-		std::cout << "Nickname:\t" << this->listContacts[choice].getNickname() << std::endl;
-		std::cout << "Phone number:\t" << this->listContacts[choice].getPhoneNumber() << std::endl;
-		std::cout << "Darkest secret:\t" << this->listContacts[choice].getDarkestSecret() << std::endl;
-		std::cout << std::endl;
-	}
+		printAllInformation(choice);
 	else
 		std::cout << "Invalid index. Be cautius and try another one." << std::endl;
 }

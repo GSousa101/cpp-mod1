@@ -4,7 +4,7 @@
 #include  <iomanip>
 #include <cctype>
 
-PhoneBook::PhoneBook( void ) {}
+PhoneBook::PhoneBook( void ) : totalContacts(0), oldestContact(0) {}
 
 PhoneBook::~PhoneBook( void ) {}
 
@@ -60,7 +60,7 @@ static void	printColumn( std::string info ) {
 	std::cout << std::setw(10) << std::right << info << "|";
 }
 
-static void	printAllInformationt ( int choice )
+void	PhoneBook::printAllInformation ( int choice )
 {
 	std::cout << std::endl;
 	std::cout << "First name:\t" << this->listContacts[choice].getFirstName() << std::endl;

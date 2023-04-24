@@ -20,6 +20,7 @@ private:
 	Contact	listContacts[8];
 	int	totalContacts;
 	int	oldestContact;
+	void	printAllInformation( int choice );
 
 public:
 	PhoneBook( void );

@@ -9,11 +9,13 @@ private:
 	std::string _name;
 
 public:
-	Zombie( void );
 	~Zombie( void );
 	void		setName( std::string );
 	std::string	getName( void );
 	void		announce( void );
 };
+
+Zombie*	newZombie( std::string name);
+void	randomChump( std::string name );
 
 #endif

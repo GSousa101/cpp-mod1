@@ -10,7 +10,7 @@ private:
 
 public:
 	Weapon( std::string value);
-	std::string	getType( void );
+	std::string&	getType( void );
 	void		setType( std::string value );
 };
 #endif

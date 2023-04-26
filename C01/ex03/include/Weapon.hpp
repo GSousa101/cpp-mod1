@@ -9,6 +9,7 @@ private:
 	std::string	_type;
 
 public:
+	HumanA( std::string value);
 	std::string	getType( void );
 	void		setType( std::string value );
 };

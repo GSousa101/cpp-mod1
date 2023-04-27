@@ -1,4 +1,4 @@
-NAME		=	myAwesomePhoneBook
+NAME		=	mysed
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####
@@ -8,8 +8,7 @@ CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 ####	Source & Objects
 FILES		:=	PhoneBook.cpp	Contact.cpp
 
-SOURCE		:=	$(addprefix source/, $(FILES))	\
-				main.cpp
+SOURCE		:=	main.cpp
 # Colors
 BLACK	=	\033[0;30m
 BLUE	=	\033[0;34m

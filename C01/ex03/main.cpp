@@ -19,13 +19,6 @@ int	main( void ) {
 				club.setType("some other type of club");
 				jim.attack();
 		}
-	Weapon	machado;
-
-	machado.setType("fio de cortar");
-	std::cout << machado.getType() << std::endl;
-	
-	HumanA	alfonso("Alfonso", machado);
-	alfonso.attack();
 		*/
 	return (0);
 }

@@ -9,8 +9,11 @@ private:
 	std::string	_type;
 
 public:
+	// Constructor
 	Weapon( std::string value);
-	std::string&	getType( void );
+
+	// Getter and Setter
+	std::string	getType( void ) const;
 	void		setType( std::string value );
 };
 #endif

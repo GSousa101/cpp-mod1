@@ -15,7 +15,22 @@ void	replaceLine(std::string line, std::string s1, std::string s2) {
 
 	}
 }
+
+int	errFile(std::string infile, std::string s1, std::string s2) {
+if (!infile.is_open()) {
+    std::cout << "Unable to read file" << std::endl;
+  }
+  if (infile.peek() == std::ifstream::traits_type::eof()) {
+    std::cout << "File is empty" << std::endl;
+  }
+  if (!s1.size() || !s2.size()) {
+    std:cout << "Strings cannot be empty" << std::endl;
+  }
+	return (0);
+}
+
 int	main (int argc, char** argv) {
+	std::string	filename = argv[1];
 	std::string	s1 = argv[2];
 	std::string	s2 = argv[3];
 
@@ -23,13 +38,17 @@ int	main (int argc, char** argv) {
 		std::cout << "Usage: ./ft_sed <file_name> <string1> <string2>" << std::endl;
 	else
 	{
-		std::ifstream	infile(argv[1]);
+		std::ifstream	infile(filename);
+		std::ofstream outfile(filename + ".replace");
 		std::string	line;
-		//deal_error file.
+		if (ErrFile(infile, s1, s2))
+			return (1);
 
 		while (std::getline(infile, line))
 			replaceLine(line, s1, s2);
-			std::cout << line << std::endl;
+
+			infile.close();
+  			outfile.close();
 	}
 	return (0);
 }

@@ -10,7 +10,7 @@ int	main( void ) {
 	jack = zombieHorde(30, "jack");
 	for (int i = 0; i < 4; i++)
 		john[i].announce();
-	for (int i = 0; i < 30; i++ 
+	for (int i = 0; i < 30; i++)
 		jack[i].announce();
 	delete[] john;
 	delete[] jack;

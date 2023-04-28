@@ -6,9 +6,10 @@ CC		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ####	Source & Objects
-FILES		:=	PhoneBook.cpp	Contact.cpp
+FILES		:=	sed.cpp
 
-SOURCE		:=	main.cpp
+SOURCE		:=	main.cpp	\
+				$(addprefix source/, $(FILES))
 # Colors
 BLACK	=	\033[0;30m
 BLUE	=	\033[0;34m

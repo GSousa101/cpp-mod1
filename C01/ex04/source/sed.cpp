@@ -1,19 +1,18 @@
 #include "../include/sed.hpp"
 
 Sed::Sed(std::string filename, std::string s1, std::string s2) {
-  _filename = filename;
-  _s1 = s1;
-  _s2 = s2;
+    _filename = filename;
+    _s1 = s1;
+    _s2 = s2;
+    _infile.open(filename.c_str());
 }
 
 int Sed::errInput() {
-    std::ifstream infile(this->_filename);
-
-    if (!infile.is_open()) {
+    if (!this->_infile.is_open()) {
         std::cout << "Unable to read file" << std::endl;
         return (1);
     }
-    if (infile.peek() == std::ifstream::traits_type::eof()) {
+    if (this->_infile.peek() == std::ifstream::traits_type::eof()) {
         std::cout << "File is empty" << std::endl;
         return (1);
     }
@@ -26,11 +25,10 @@ int Sed::errInput() {
 
 void    Sed::replace() {
     std::string line;
-    std::ifstream infile(this->_filename);
-    std::ofstream outfile(this->_filename + ".replace");
+    std::ofstream outfile((this->_filename + ".replace").c_str());
 
-    infile.is_open();
-    while (std::getline(infile, line)) {
+
+    while (std::getline(this->_infile, line)) {
         int beginIndex = line.find(this->_s1);
         while (beginIndex != -1) {
             line.replace(beginIndex, this->_s1.size(), this->_s2);
@@ -38,6 +36,6 @@ void    Sed::replace() {
         }
         outfile << line << std::endl;
     }
-    infile.close();
+    this->_infile.close();
     outfile.close();
 }

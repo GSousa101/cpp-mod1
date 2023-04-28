@@ -31,7 +31,8 @@ void    Sed::replace() {
     while (std::getline(this->_infile, line)) {
         int beginIndex = line.find(this->_s1);
         while (beginIndex != -1) {
-            line.replace(beginIndex, this->_s1.size(), this->_s2);
+            line.erase(beginIndex, this->_s1.size());
+            line.insert(beginIndex, this->_s2);
             beginIndex = line.find(this->_s1, beginIndex + this->_s2.size());
         }
         outfile << line << std::endl;

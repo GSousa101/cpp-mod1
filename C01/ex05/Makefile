@@ -6,7 +6,7 @@ CC		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ####	Source & Objects
-FILES		:=	PhoneBook.cpp	Contact.cpp
+FILES		:=	Harls.cpp
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main.cpp

@@ -12,7 +12,7 @@ class Harl {
   void error( void );
 
  public:
-  void complain( std::string choice );
+  void complain( std::string level );
 };
 
 #endif

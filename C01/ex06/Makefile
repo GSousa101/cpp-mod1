@@ -1,4 +1,4 @@
-NAME		=	myAwesomePhoneBook
+NAME		=	Harl
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####

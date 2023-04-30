@@ -5,11 +5,14 @@
 #include <string>
 
 class Harl {
- private:
+private:
   void debug(void);
   void info(void);
   void warning(void);
   void error(void);
   void defaultComplain(void);
+
+public:
+  void complain(std::string level);
 };
 #endif

@@ -24,19 +24,18 @@ int Sed::errInput() {
 }
 
 void    Sed::replace() {
-    std::string line;
-    std::ofstream outfile((this->_filename + ".replace").c_str());
+	std::string line;
+	std::ofstream outfile((this->_filename + ".replace").c_str());
 
-
-    while (std::getline(this->_infile, line)) {
-        int beginIndex = line.find(this->_s1);
-        while (beginIndex != -1) {
-            line.erase(beginIndex, this->_s1.size());
-            line.insert(beginIndex, this->_s2);
-            beginIndex = line.find(this->_s1, beginIndex + this->_s2.size());
-        }
-        outfile << line << std::endl;
-    }
-    this->_infile.close();
-    outfile.close();
+	while (std::getline(this->_infile, line)) {
+		int beginIndex = line.find(this->_s1);
+		while (beginIndex != -1) {
+			line.erase(beginIndex, this->_s1.size());
+			line.insert(beginIndex, this->_s2);
+			beginIndex = line.find(this->_s1);
+		}
+		outfile << line << std::endl;
+	}
+	this->_infile.close();
+	outfile.close();
 }

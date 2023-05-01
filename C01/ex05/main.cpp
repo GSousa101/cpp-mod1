@@ -1,6 +1,6 @@
 #include "include/Harl.hpp"
 
-int main() {
+int main( void ) {
 	Harl harl;
 
 	std::cout << "DEBUG: " << std::endl;
@@ -13,4 +13,5 @@ int main() {
 	harl.complain("ERROR");
 	std::cout << "NOT EXISTENT: " << std::endl;
 	harl.complain("YEAH");
+	return (0);
 }

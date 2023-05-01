@@ -27,3 +27,27 @@ void Harl::error() {
 void Harl::defaultComplain() {
   std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
+
+void Harl::complain(std::string level) {
+	std::string levelMessages[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int index = -1;
+
+	for (int i = 0; i < 4; i++) {
+		if (levelMessages[i] == level)
+			index = i;
+	}
+
+	switch (index) {
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+			this->error();
+			break;
+		default:
+			this->defaultComplain();
+  }
+}

@@ -1,4 +1,4 @@
-NAME		=	Harl
+NAME		=	harlFilter
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####
@@ -6,7 +6,7 @@ CC		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ####	Source & Objects
-FILES		:=	Harls.cpp
+FILES		:=	Harl.cpp
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main.cpp

@@ -3,11 +3,11 @@
 
 int	main( void ) {
 
-	Zombie* cifilis;
+	Zombie* aquiles;
 
-	cifilis = newZombie("Cifilis");
+	aquiles = newZombie("Aquiles");
 	randomChump("Icaro");
-	cifilis->announce();
-	delete cifilis;
+	aquiles->announce();
+	delete aquiles;
 	return (0);
 }

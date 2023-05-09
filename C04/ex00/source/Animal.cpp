@@ -20,16 +20,16 @@ Animal::~Animal ( void ) {
     std::cout << "The animal just died" << std::endl;
 }
 
-// Opeartor
+// Operator
 Animal& Animal::operator=(const Animal& other) {
     std::cout << "A new animal is cloned" << std::endl;
     this->_type = other._type;
 }
 
-std::string const& getType( void ) {
+std::string const& Animal::getType( void ) const {
     return (this->_type);
 }
 
-void    Animal::makeSound( void ) {
-    std::cout << "The noise of some animal" << std::endl;
+void    Animal::makeSound( void ) const {
+    std::cout << "*UNDEFINED ANIMAL SOUND*" << std::endl;
 }

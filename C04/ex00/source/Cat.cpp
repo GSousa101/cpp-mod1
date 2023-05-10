@@ -10,11 +10,11 @@ Cat::Cat(const Cat& other) : Animal(other) {
 }
 
 Cat::~Cat( void ) {
-    std::cout << "A cat just died" << std::endl;
+    std::cout << "A cat died and is rotting" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {
-    std::cout << "A new cat is cloned" << std::endl;
+    std::cout << "A new cat is cloned with = operator" << std::endl;
     this->_type = other.getType();
     return (*this);
 }

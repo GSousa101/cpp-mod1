@@ -20,11 +20,6 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
 WrongAnimal &WrongAnimal::operator=( WrongAnimal const & other )
 {
 	//if ( this != &rhs )
@@ -36,11 +31,15 @@ WrongAnimal &WrongAnimal::operator=( WrongAnimal const & other )
 }
 
 /*
-** --------------------------------- METHODS ----------------------------------
+** --------------------------------- MEMBER FUNCTIONS ----------------------------------
 */
 
 std::string const&	WrongAnimal::getType( void ) const {
 	return (this->_type);
+}
+
+void				WrongAnimal::makeWrongSound( void ) const {
+	std::cout << "****SOME UNRECOGNIZED ANIMAL SOUND****" << std::endl;
 }
 
 /*

@@ -13,16 +13,16 @@ Animal::Animal(std::string type) {
 
 Animal::Animal(const Animal& other) {
     std::cout << "A new animal is cloned" << std::endl;
-    *this = other;
+    this->_type = other._type;
 }
 
 Animal::~Animal ( void ) {
-    std::cout << "The animal just died" << std::endl;
+    std::cout << "The animal just died and is rotting" << std::endl;
 }
 
 // Operator
 Animal& Animal::operator=(const Animal& other) {
-    std::cout << "A new animal is cloned" << std::endl;
+    std::cout << "A new animal is cloned with = operator" << std::endl;
     this->_type = other._type;
     return (*this);
 }
@@ -32,5 +32,5 @@ std::string const& Animal::getType( void ) const {
 }
 
 void    Animal::makeSound( void ) const {
-    std::cout << "*UNDEFINED ANIMAL SOUND*" << std::endl;
+    std::cout << "What sound an animal should do?" << std::endl;
 }

@@ -14,7 +14,7 @@ Dog::~Dog( void ) {
 }
 
 Dog& Dog::operator=(const Dog& other) {
-    std::cout << "A new dog is cloned" << std::endl;
+    std::cout << "A new dog is cloned with = operator" << std::endl;
     this->_type = other.getType();
     return (*this);
 }

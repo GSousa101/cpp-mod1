@@ -6,7 +6,7 @@ CC		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ####	Source & Objects
-FILES		:=	Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+FILES		:=	Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main.cpp

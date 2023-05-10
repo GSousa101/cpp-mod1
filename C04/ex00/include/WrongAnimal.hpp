@@ -7,6 +7,8 @@
 class WrongAnimal
 {
 	private:
+		std::string	_type;
+		
 	public:
 		// Constructors and destructor
 		WrongAnimal( void );
@@ -19,7 +21,5 @@ class WrongAnimal
 		std::string	const&	getType( void ) const;
 		void				makeWrongSound( void ) const;
 };
-
-std::ostream &operator<<( std::ostream & o, WrongAnimal const & i );
 
 #endif

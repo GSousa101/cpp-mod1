@@ -1,18 +1,23 @@
-#include "WrongAnimal.hpp"
+#include "../include/WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR & DESTRUCTOR --------------------------------
 */
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal( void )
 {
+	std::cout << "WrongAnimal default constructor called" << std::endl;
+	this->_type = "noType";
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal & src )
+WrongAnimal::WrongAnimal( const WrongAnimal& other )
 {
+	std::cout << "WrongAnimal copy constructor called" << std::endl;
+	this->_type = other.getType();
 }
 
 WrongAnimal::~WrongAnimal()
 {
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 
@@ -20,26 +25,23 @@ WrongAnimal::~WrongAnimal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-WrongAnimal &WrongAnimal::operator=( WrongAnimal const & rhs )
+WrongAnimal &WrongAnimal::operator=( WrongAnimal const & other )
 {
 	//if ( this != &rhs )
 	//{
 		//this->_value = rhs.getValue();
 	//}
+	(void)other;
 	return *this;
 }
-
-std::ostream &operator<<( std::ostream & o, WrongAnimal const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+std::string const&	WrongAnimal::getType( void ) const {
+	return (this->_type);
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

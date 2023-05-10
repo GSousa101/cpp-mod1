@@ -43,6 +43,7 @@ int main( void ) {
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
 }
 {
+    std::cout << std::endl << "______TESTS FOR WRONGANIMAL______" << std::endl;
     std::cout << "______TESTS FROM THE SUBJECT______" << std::endl;
     const WrongAnimal* perry = new WrongAnimal();
     const WrongAnimal* garfield = new WrongCat();

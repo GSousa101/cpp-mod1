@@ -44,7 +44,7 @@ std::string const&	WrongAnimal::getType( void ) const {
 }
 
 void				WrongAnimal::makeWrongSound( void ) const {
-	std::cout << "Perry the ornitorringo" << std::endl;
+	std::cout << "Non sound for WrongAnimal" << std::endl;
 }
 
 /*

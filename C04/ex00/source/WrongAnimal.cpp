@@ -9,6 +9,11 @@ WrongAnimal::WrongAnimal( void )
 	this->_type = "noType";
 }
 
+WrongAnimal::WrongAnimal(std::string type) {
+    std::cout << "A new WronAnimal is born" << std::endl;
+    this->_type = type;
+}
+
 WrongAnimal::WrongAnimal( const WrongAnimal& other )
 {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
@@ -39,7 +44,7 @@ std::string const&	WrongAnimal::getType( void ) const {
 }
 
 void				WrongAnimal::makeWrongSound( void ) const {
-	std::cout << "****SOME UNRECOGNIZED ANIMAL SOUND****" << std::endl;
+	std::cout << "Perry the ornitorringo" << std::endl;
 }
 
 /*

@@ -1,6 +1,8 @@
 #include "include/Animal.hpp"
 #include "include/Dog.hpp"
 #include "include/Cat.hpp"
+#include "include/WrongAnimal.hpp"
+#include "include/WrongCat.hpp"
 
 int main( void ) {
 {
@@ -40,24 +42,20 @@ int main( void ) {
 
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
 }
-/*
 {
     std::cout << "______TESTS FROM THE SUBJECT______" << std::endl;
-    const Animal* meta = new Animal();
-    const Animal* duke = new Dog();
-    const Animal* snowball = new Cat();
+    const WrongAnimal* perry = new WrongAnimal();
+    const WrongAnimal* garfield = new WrongCat();
 
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << duke->getType() << " " << std::endl;
-    std::cout << snowball->getType() << " " << std::endl;
+    std::cout << perry->getType() << " " << std::endl;
+    std::cout << garfield->getType() << " " << std::endl;
 
-    meta->makeSound();
-    duke->makeSound();
-    snowball->makeSound();
+    perry->makeWrongSound();
+    garfield->makeWrongSound();
 
-    delete meta;
-    delete duke;
-    delete snowball;
+    delete perry;
+    delete garfield;
+/*
 
     std::cout << std::endl << "______THE BASIC REX______" << std::endl;
     Dog rex;
@@ -76,9 +74,11 @@ int main( void ) {
     std::cout << bella.getType() << std::endl;
     bella.makeSound();
 
+    */
+
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
+
 }
-*/
 
     return 0;
 }

@@ -1,24 +1,24 @@
 #include "../include/WrongCat.hpp"
 
 WrongCat::WrongCat( void ) : WrongAnimal("WrongCat") {
-    std::cout << "A new WrongCat is born" << std::endl;
+    std::cout << GREEN << "A new WrongCat is born" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
-    std::cout << "A new WrongCat is cloned" << std::endl;
+    std::cout << ORANGE << "A new WrongCat is cloned" << RESET << std::endl;
     *this = other;
 }
 
 WrongCat::~WrongCat( void ) {
-    std::cout << "A WrongCat died and is rotting" << std::endl;
+    std::cout << RED << "A WrongCat died and is rotting" << RESET << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& other) {
-    std::cout << "A new WrongCat is cloned with = operator" << std::endl;
+    std::cout << YELLOW << "A new WrongCat is cloned with = operator" << RESET << std::endl;
     this->_type = other.getType();
     return (*this);
 }
 
 void    WrongCat::makeWrongSound( void ) const {
-    std::cout << "Wrong Meeeow" << std::endl;
+    std::cout << CYAN << "Wrong Meeeow" << RESET << std::endl;
 }

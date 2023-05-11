@@ -1,24 +1,24 @@
 #include "../include/Cat.hpp"
 
 Cat::Cat( void ) : Animal("Cat") {
-    std::cout << "A new cat is born" << std::endl;
+    std::cout << GREEN << "A new cat is born" << RESET << std::endl;
 }
 
 Cat::Cat(const Cat& other) : Animal(other) {
-    std::cout << "A new cat is cloned" << std::endl;
+    std::cout << ORANGE << "A new cat is cloned" << RESET << std::endl;
     *this = other;
 }
 
 Cat::~Cat( void ) {
-    std::cout << "A cat died and is rotting" << std::endl;
+    std::cout << RED << "A cat died and is rotting" << RESET << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {
-    std::cout << "A new cat is cloned with = operator" << std::endl;
+    std::cout << YELLOW << "A new cat is cloned with = operator" << RESET << std::endl;
     this->_type = other.getType();
     return (*this);
 }
 
 void    Cat::makeSound( void ) const {
-    std::cout << "Meeeow" << std::endl;
+    std::cout << CYAN << "Meeeow" << RESET << std::endl;
 }

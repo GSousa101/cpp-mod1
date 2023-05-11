@@ -1,24 +1,24 @@
 #include "../include/Dog.hpp"
 
 Dog::Dog( void ) : Animal("Dog") {
-    std::cout << "A new dog is born" << std::endl;
+    std::cout << GREEN << "A new dog is born" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
-    std::cout << "A new dog is cloned" << std::endl;
+    std::cout << ORANGE << "A new dog is cloned" << RESET << std::endl;
     *this = other;
 }
 
 Dog::~Dog( void ) {
-    std::cout << "A dog just died" << std::endl;
+    std::cout << RED << "A dog just died" << RESET << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
-    std::cout << "A new dog is cloned with = operator" << std::endl;
+    std::cout << YELLOW << "A new dog is cloned with = operator" << RESET << std::endl;
     this->_type = other.getType();
     return (*this);
 }
 
 void    Dog::makeSound( void ) const {
-    std::cout << "Woof Woof" << std::endl;
+    std::cout << CYAN << "Woof Woof" << RESET << std::endl;
 }

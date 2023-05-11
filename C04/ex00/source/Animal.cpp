@@ -4,6 +4,7 @@
 Animal::Animal( void ) {
     std::cout << "A new animal is born" << std::endl;
     this->_type = "No race";
+
 }
 
 Animal::Animal(std::string type) {

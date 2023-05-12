@@ -28,6 +28,7 @@ Animal& Animal::operator=(const Animal& other) {
     return (*this);
 }
 
+// Getters
 std::string const& Animal::getType( void ) const {
     return (this->_type);
 }
@@ -36,6 +37,7 @@ std::string const&  Animal::getIdea ( void ) const {
     return (this->_brain->getIdea());
 }
 
+// Methods
 void    Animal::makeSound( void ) const {
     std::cout << "What sound an animal should do?" << std::endl;
 }

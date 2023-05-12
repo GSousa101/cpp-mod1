@@ -126,8 +126,12 @@ Brain& Brain::operator=(Brain const& other) {
 }
 // Getters - Setters ===========================================================
 std::string const&  Brain::getIdea( void ) const {
-    srandom(time(0));
+    //srandom(time(0));
 
-    int randomNumber = random() % 100;
-    return (this->_ideas[randomNumber]);
+    //int randomNumber = random() % 100;
+    return (this->_ideas[0]);
+}
+
+void                Brain::setIdea( void ) {
+    this->_ideas[0] = "Lalalalal";
 }

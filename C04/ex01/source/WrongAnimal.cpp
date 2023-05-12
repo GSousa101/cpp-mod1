@@ -45,10 +45,3 @@ std::string const&  WrongAnimal::getIdea ( void ) const {
 void				WrongAnimal::makeWrongSound( void ) const {
 	std::cout << "Non sound for WrongAnimal" << std::endl;
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

@@ -103,6 +103,7 @@ std::string Brain::_ideas[100] = {
     "I hope I get to go for a walk in the park today."
 };
 
+// Constructor - Destructor ====================================================
 Brain::Brain( void ) {
     std::cout << GREEN << "I have a brain" << RESET << std::endl;
 }
@@ -116,6 +117,14 @@ Brain::~Brain( void ) {
     std::cout << RED << "My brain melted" << RESET << std::endl;
 }
 
+// Operators ==================================================================
+Brain& Brain::operator=(Brain const& other) {
+    std::cout << YELLOW << "A brain is cloned with = operator" << RESET << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = other._ideas[i];
+    return (*this);
+}
+// Getters - Setters ===========================================================
 std::string const&  Brain::getIdea( void ) const {
     srandom(time(0));
 

@@ -10,7 +10,7 @@ Cat::Cat(const Cat& other) : Animal(other) {
 }
 
 Cat::~Cat( void ) {
-    std::cout << RED << "A cat died and is rotting" << RESET << std::endl;
+    std::cout << RED << "Cat R.I.P." << RESET << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {

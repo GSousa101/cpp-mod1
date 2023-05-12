@@ -4,7 +4,7 @@
 Animal::Animal( void ) {
     std::cout << "A new animal is born" << std::endl;
     this->_type = "No race";
-
+    this->_brain = new Brain();
 }
 
 Animal::Animal(std::string type) {
@@ -18,7 +18,8 @@ Animal::Animal(const Animal& other) {
 }
 
 Animal::~Animal ( void ) {
-    std::cout << "The animal just died and is rotting" << std::endl;
+    std::cout << "Animal R.I.P." << std::endl;
+    delete this->_brain;
 }
 
 // Operator

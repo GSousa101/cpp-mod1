@@ -15,7 +15,6 @@ public:
                         Animal (std::string type);
                         Animal(const Animal& other);
     virtual             ~Animal( void );
-    //Equal operator
     Animal&             operator=(const Animal& other);
 
     std::string const&  getType( void ) const;

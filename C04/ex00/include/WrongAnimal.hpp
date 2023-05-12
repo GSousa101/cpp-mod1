@@ -12,11 +12,11 @@ class WrongAnimal
 		
 	public:
 		// Constructors and destructor
-				WrongAnimal( void );
-				WrongAnimal( std::string type );
-				WrongAnimal( const WrongAnimal& other );
-		virtual ~WrongAnimal( void );
-		WrongAnimal &operator=( const WrongAnimal& other );
+							WrongAnimal( void );
+							WrongAnimal( std::string type );
+							WrongAnimal( const WrongAnimal& other );
+		virtual				~WrongAnimal( void );
+		WrongAnimal			&operator=( const WrongAnimal& other );
 
 		// Member functions
 		std::string	const&	getType( void ) const;

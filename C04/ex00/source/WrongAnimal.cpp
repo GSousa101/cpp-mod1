@@ -1,7 +1,7 @@
 #include "../include/WrongAnimal.hpp"
 
 /*
-** ------------------------------- CONSTRUCTOR & DESTRUCTOR --------------------------------
+** ------------------ CONSTRUCTOR & DESTRUCTOR -------------------
 */
 WrongAnimal::WrongAnimal( void )
 {
@@ -25,13 +25,9 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-WrongAnimal &WrongAnimal::operator=( WrongAnimal const & other )
-{
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	(void)other;
+WrongAnimal& WrongAnimal:: operator=(const WrongAnimal& other) {
+	std::cout << "WrongAnimal cloned by assignment operator" << std::endl;
+	this->_type = other._type;
 	return *this;
 }
 
@@ -46,10 +42,3 @@ std::string const&	WrongAnimal::getType( void ) const {
 void				WrongAnimal::makeWrongSound( void ) const {
 	std::cout << "Non sound for WrongAnimal" << std::endl;
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

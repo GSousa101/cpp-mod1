@@ -22,7 +22,9 @@ int main( void ) {
     delete meta;
     delete duke;
     delete snowball;
+}
 
+{
     std::cout << std::endl << "______THE BASIC REX______" << std::endl;
     Dog rex;
     rex.makeSound();
@@ -43,6 +45,26 @@ int main( void ) {
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
 }
 {
+    std::cout << std::endl << "______THE BASIC SNOW______" << std::endl;
+    Cat snow;
+    snow.makeSound();
+    std::cout << std::endl << "______TEST CONSTRUCTOR WITH ARG______" << std::endl;
+    Cat percy(snow);
+    percy.makeSound();
+
+    std::cout << std::endl << "______TEST OPERATOR= WITH CONSTRUCTOR______" << std::endl;
+    Cat maxy = snow;
+    maxy.makeSound();
+
+    std::cout << std::endl << "______TEST OPERATOR=______" << std::endl;
+    Cat rate;
+    rate = snow;
+    std::cout << rate.getType() << std::endl;
+    rate.makeSound();
+
+    std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
+}
+{
     std::cout << std::endl << "______TESTS FOR WRONGANIMAL______" << std::endl;
     std::cout << "______TESTS FROM THE SUBJECT______" << std::endl;
     const WrongAnimal* perry = new WrongAnimal();
@@ -54,31 +76,9 @@ int main( void ) {
     perry->makeWrongSound();
     garfield->makeWrongSound();
 
+    std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
     delete perry;
     delete garfield;
-/*
-
-    std::cout << std::endl << "______THE BASIC REX______" << std::endl;
-    Dog rex;
-    rex.makeSound();
-    std::cout << std::endl << "______TEST CONSTRUCTOR WITH ARG______" << std::endl;
-    Dog toto(rex);
-    toto.makeSound();
-
-    std::cout << std::endl << "______TEST OPERATOR= WITH CONSTRUCTOR______" << std::endl;
-    Dog max = rex;
-    max.makeSound();
-
-    std::cout << std::endl << "______TEST OPERATOR=______" << std::endl;
-    Dog bella;
-    bella = rex;
-    std::cout << bella.getType() << std::endl;
-    bella.makeSound();
-
-    */
-
-    std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
-
 }
 
     return 0;

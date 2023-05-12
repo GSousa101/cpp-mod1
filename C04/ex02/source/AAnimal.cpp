@@ -39,8 +39,3 @@ std::string const& AAnimal::getType( void ) const {
 std::string const&  AAnimal::getIdea ( void ) const {
     return (this->_brain->getIdea());
 }
-
-// Methods
-void    AAnimal::makeSound( void ) const {
-    std::cout << "What sound an animal should do?" << std::endl;
-}

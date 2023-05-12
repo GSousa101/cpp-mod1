@@ -20,6 +20,6 @@ public:
 
     std::string const&  getType( void ) const;
     std::string const&  getIdea( void ) const;
-    virtual void        makeSound( void ) const;
+    virtual void        makeSound( void ) const = 0;
 };
 #endif

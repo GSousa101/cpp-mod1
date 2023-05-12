@@ -4,11 +4,14 @@
 # include <iostream>
 # include <string>
 # include "Color.hpp"
+# include "Brain.hpp"
 
 class WrongAnimal
 {
 	protected:
 		std::string	_type;
+		Brain*      _brain;
+
 		
 	public:
 		// Constructors and destructor
@@ -20,6 +23,7 @@ class WrongAnimal
 
 		// Member functions
 		std::string	const&	getType( void ) const;
+		std::string const&	getIdea( void ) const;
 		void				makeWrongSound( void ) const;
 };
 

@@ -10,9 +10,9 @@ private:
 
 public:
 	~Zombie( void );
-	void		setName( std::string );
-	std::string	getName( void );
-	void		announce( void );
+	void				setName( std::string );
+	std::string const&	getName( void );
+	void				announce( void );
 };
 
 Zombie*	newZombie( std::string name);

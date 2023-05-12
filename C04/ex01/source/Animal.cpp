@@ -10,11 +10,13 @@ Animal::Animal( void ) {
 Animal::Animal(std::string type) {
     std::cout << "A new animal is born" << std::endl;
     this->_type = type;
+    this->_brain = new Brain();
 }
 
 Animal::Animal(const Animal& other) {
     std::cout << "A new animal is cloned" << std::endl;
     this->_type = other._type;
+    this->_brain = new Brain(*other._brain);
 }
 
 Animal::~Animal ( void ) {

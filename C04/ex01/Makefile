@@ -1,4 +1,4 @@
-NAME		=	Animals
+NAME		=	AnimalsThoughts
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####

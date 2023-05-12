@@ -1,4 +1,4 @@
-NAME		=	Animals
+NAME		=	AnimalsAbstract
 ##MAKEFLAGS	:= --silent
 
 ####	Compilers & flags	####
@@ -6,7 +6,7 @@ CC		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ####	Source & Objects
-FILES		:=	Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+FILES		:=	AAnimal.cpp Cat.cpp Dog.cpp AWrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main.cpp

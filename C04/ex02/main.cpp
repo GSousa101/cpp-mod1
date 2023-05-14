@@ -15,7 +15,6 @@ int main( void ) {
         rex.makeSound();
         snowWhite.makeSound();
         std::cout << std::endl << "______Creating______" << std::endl;
-
     }
     return 0;
 }

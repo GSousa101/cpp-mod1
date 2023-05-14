@@ -15,11 +15,11 @@ AMateria::~AMateria( void ) {
 
 }
 
-AMateria&   operator=(AMateria const& other) {
+AMateria&   AMateria::operator=(AMateria const& other) {
 
 }
 
 // Getters
-std::string const&  getType( void ) const {
+std::string const&  AMateria::getType( void ) const {
     return (this->_type)
 }

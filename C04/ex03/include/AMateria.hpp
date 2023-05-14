@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-//#include "../interfaces/ICharacter.hpp"
+#include "../interfaces/ICharacter.hpp"
 
 class AMateria {
 
@@ -20,7 +20,7 @@ class AMateria {
 
         // Member Functions
         virtual AMateria*   clone() const = 0;
-//        virtual void        use(ICharacter& target);
+        virtual void        use(ICharacter& target);
 
     protected:
         std::string _type;

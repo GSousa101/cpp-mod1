@@ -17,7 +17,13 @@ void Harl::error() {
 }
 
 void Harl::complain(std::string level) {
-	void (Harl::*levelFunctions[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error}; std::string levelMessages[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*levelFunctions[4])() = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error}
+		;
+		std::string levelMessages[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int choiceFt = -1;
 
 	for (int i = 0; i < 4; i++) {

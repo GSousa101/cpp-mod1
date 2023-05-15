@@ -8,8 +8,7 @@
 
 class Brain {
 private:
-    std::string static _ideas[100];
-
+    std::string _ideas[100];
 
 public:
     //Constructors & destructor
@@ -19,5 +18,6 @@ public:
     Brain&              operator=(Brain const& other);
 
     std::string const&  getIdea( void ) const;
+    // void                setIdea( void );
 };
 #endif

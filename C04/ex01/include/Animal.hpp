@@ -20,6 +20,7 @@ public:
 
     std::string const&  getType( void ) const;
     std::string const&  getIdea( void ) const;
+    void                setIdea( void );
     virtual void        makeSound( void ) const;
 };
 #endif

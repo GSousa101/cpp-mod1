@@ -8,8 +8,7 @@
 
 class Brain {
 private:
-    std::string static _ideas[100];
-
+    std::string _ideas[100];
 
 public:
     //Constructors & destructor

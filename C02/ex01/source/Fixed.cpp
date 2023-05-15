@@ -50,3 +50,17 @@ void			Fixed::setRawBits( int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
+
+float			Fixed::toFloat ( void ) const
+{
+    int scalingFactor = 1 << this->fractionalBits;
+    int fixedPointValue = this->_value * scalingFactor;
+    return fixedPointValue;
+}
+
+int				Fixed::toInt ( void ) const
+{
+    int scalingFactor = 1 << this->fractionalBits;
+    int fixedPointValue = this->_value / scalingFactor;
+    return fixedPointValue;
+}

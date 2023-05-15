@@ -30,7 +30,7 @@ int main( void ) {
 }
 {
 
-    std::cout << std::endl << "______DEEP COPY______" << std::endl;
+    std::cout << std::endl << "______DEEP COPY 1______" << std::endl;
     Dog toto;
     Dog rex = toto;
 
@@ -40,8 +40,11 @@ int main( void ) {
 
 }
 {
+    std::cout << std::endl << "______DEEP COPY 2______" << std::endl;
     Dog kay;
-    Dog key(kay);
+    Dog key;
+
+    key = kay;
 
     std::cout << kay.getIdea() << std::endl;
     std::cout << key.getIdea() << std::endl;

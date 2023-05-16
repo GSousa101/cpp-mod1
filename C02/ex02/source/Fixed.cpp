@@ -27,7 +27,7 @@ Fixed::~Fixed( void ) {}
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Fixed&				Fixed::operator=( Fixed const & other )
+Fixed&		Fixed::operator=( Fixed const & other )
 {
 	if ( this != &other )
 	{
@@ -39,35 +39,77 @@ Fixed&				Fixed::operator=( Fixed const & other )
 
 bool		Fixed::operator>( Fixed const& other )
 {
-	return (this->getRawBits() > other.getRawBits())
+	return (this->getRawBits() > other.getRawBits());
 }
 
 bool		Fixed::operator<( Fixed const& other )
 {
-	return (this->getRawBits() < other.getRawBits())
+	return (this->getRawBits() < other.getRawBits());
 }
 
 bool		Fixed::operator>=( Fixed const& other )
 {
-	return (this->getRawBits() >= other.getRawBits())
+	return (this->getRawBits() >= other.getRawBits());
 }
 
 bool		Fixed::operator<=( Fixed const& other )
 {
-	return (this->getRawBits() <= other.getRawBits())
+	return (this->getRawBits() <= other.getRawBits());
 }
 
 bool		Fixed::operator==( Fixed const& other )
 {
-	return (this->getRawBits() == other.getRawBits())
+	return (this->getRawBits() == other.getRawBits());
 }
 
 bool		Fixed::operator!=( Fixed const& other )
 {
-	return (this->getRawBits() != other.getRawBits())
+	return (this->getRawBits() != other.getRawBits());
 }
 
+Fixed& Fixed::operator+(Fixed const& other) {
+  this->_value = this->getRawBits() + other.getRawBits();
+  return (*this);
+}
 
+Fixed& Fixed::operator-(Fixed const& other) {
+  this->_value = this->getRawBits() - other.getRawBits();
+  return (*this);
+}
+
+  // dividimos o resultado por 256 (right shift de 8 bits) p/ o operador << conseguir printar esse resultado como float corretamente
+Fixed& Fixed::operator*(Fixed const& other) {
+  this->_value = (this->getRawBits() * other.getRawBits() >> this->_fractionalBits);
+  return (*this);
+}
+
+  // multiplicamos o resultado por 256 (ligar o primeiro bit da esquerda) p/ o operador << conseguir printar esse resultado como float corretamente
+Fixed& Fixed::operator/(Fixed const& other) {
+  this->_value = (this->getRawBits() / other.getRawBits() * (1 << this->_fractionalBits));
+  return (*this);
+}
+
+Fixed& Fixed::operator++(void) {
+  ++this->_value;
+  return (*this);
+}
+
+Fixed Fixed::operator++(int) {
+  Fixed temp = *this;
+  ++this->_value;
+  return (temp);
+}
+
+Fixed Fixed::operator--(int) {
+  Fixed temp = *this;
+  --this->_value;
+  return (temp);
+}
+
+Fixed& Fixed::operator--(void) {
+  --this->_value;
+  return (*this);
+}
 
 std::ostream&		operator<<( std::ostream & ostream, Fixed const & obj )
 {

@@ -18,14 +18,13 @@ Fixed::Fixed( const Fixed & other )
 Fixed::Fixed( int const value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	(void) value;
-
+	this->_value = value << this->_fractionalBits;
 }
 
 Fixed::Fixed(float const value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	(void) value;
+	this->_value = roundf(value * (1 << this->_fractionalBits));
 }
 
 Fixed::~Fixed( void )
@@ -50,7 +49,7 @@ Fixed &				Fixed::operator=( Fixed const & other )
 
 std::ostream &			operator<<( std::ostream & ostream, Fixed const & obj )
 {
-	ostream << "Value = " << obj.getRawBits();
+	ostream << obj.toFloat();
 	return ostream;
 }
 
@@ -60,7 +59,7 @@ std::ostream &			operator<<( std::ostream & ostream, Fixed const & obj )
 
 int				Fixed::getRawBits( void ) const 
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 
@@ -72,14 +71,11 @@ void			Fixed::setRawBits( int const raw)
 
 float			Fixed::toFloat ( void ) const
 {
-    int scalingFactor = 1 << this->_fractionalBits;
-    int fixedPointValue = this->_value * scalingFactor;
-    return fixedPointValue;
+    float scalingFactor = 1 << this->_fractionalBits;
+    return this->_value / scalingFactor;
 }
 
 int				Fixed::toInt ( void ) const
 {
-    int scalingFactor = 1 << this->_fractionalBits;
-    int fixedPointValue = this->_value / scalingFactor;
-    return fixedPointValue;
+    return this->_value >> this->_fractionalBits;
 }

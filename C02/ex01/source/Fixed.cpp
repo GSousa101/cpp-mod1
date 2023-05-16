@@ -36,7 +36,7 @@ Fixed::~Fixed( void )
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Fixed &				Fixed::operator=( Fixed const & other )
+Fixed&				Fixed::operator=( Fixed const & other )
 {
 	if ( this != &other )
 	{
@@ -47,7 +47,7 @@ Fixed &				Fixed::operator=( Fixed const & other )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & ostream, Fixed const & obj )
+std::ostream&			operator<<( std::ostream & ostream, Fixed const & obj )
 {
 	ostream << obj.toFloat();
 	return ostream;
@@ -57,25 +57,14 @@ std::ostream &			operator<<( std::ostream & ostream, Fixed const & obj )
 ** ------------------------------ MEMBER FUNCTIONS ------------------------------
 */
 
-int				Fixed::getRawBits( void ) const 
-{
-	//std::cout << "getRawBits member function called" << std::endl;
-	return (this->_value);
-}
+int			Fixed::getRawBits( void ) const { return (this->_value); }
 
-void			Fixed::setRawBits( int const raw)
-{
-	std::cout << "setRawBits member function called" << std::endl;
-	this->_value = raw;
-}
+void		Fixed::setRawBits( int const raw) { this->_value = raw; }
 
-float			Fixed::toFloat ( void ) const
+int			Fixed::toInt ( void ) const { return this->_value >> this->_fractionalBits; }
+
+float		Fixed::toFloat ( void ) const
 {
     float scalingFactor = 1 << this->_fractionalBits;
     return this->_value / scalingFactor;
-}
-
-int				Fixed::toInt ( void ) const
-{
-    return this->_value >> this->_fractionalBits;
 }

@@ -37,32 +37,32 @@ Fixed&		Fixed::operator=( Fixed const & other )
 	return *this;
 }
 
-bool		Fixed::operator>( Fixed const& other )
+bool		Fixed::operator>( Fixed const& other ) const
 {
 	return (this->getRawBits() > other.getRawBits());
 }
 
-bool		Fixed::operator<( Fixed const& other )
+bool		Fixed::operator<( Fixed const& other ) const
 {
 	return (this->getRawBits() < other.getRawBits());
 }
 
-bool		Fixed::operator>=( Fixed const& other )
+bool		Fixed::operator>=( Fixed const& other ) const
 {
 	return (this->getRawBits() >= other.getRawBits());
 }
 
-bool		Fixed::operator<=( Fixed const& other )
+bool		Fixed::operator<=( Fixed const& other ) const
 {
 	return (this->getRawBits() <= other.getRawBits());
 }
 
-bool		Fixed::operator==( Fixed const& other )
+bool		Fixed::operator==( Fixed const& other ) const
 {
 	return (this->getRawBits() == other.getRawBits());
 }
 
-bool		Fixed::operator!=( Fixed const& other )
+bool		Fixed::operator!=( Fixed const& other ) const
 {
 	return (this->getRawBits() != other.getRawBits());
 }
@@ -131,4 +131,31 @@ float		Fixed::toFloat ( void ) const
 {
     float scalingFactor = 1 << this->_fractionalBits;
     return this->_value / scalingFactor;
+}
+
+/*
+** ------------------- STATIC MEMBER FUNCTIONS ------------------------------
+*/
+
+const Fixed& 	Fixed::max(Fixed const& first, Fixed const& second)
+{
+	return (first > second ? first : second);
+}
+
+Fixed&			Fixed::max(Fixed& first, Fixed& second)
+{
+	return (first > second ? first : second);
+
+}
+
+const Fixed&		Fixed::min(Fixed const& first, Fixed const& second)
+{
+	return (first < second ? first : second);
+
+}
+
+Fixed&			Fixed::min(Fixed& first, Fixed& second)
+{
+	return (first < second ? first : second);
+
 }

@@ -3,7 +3,7 @@
 /*
 ** ------------------------------- CONSTRUCTOR & DESTRUCTOR --------------------------------
 */
-
+int const		Fixed::_fractionalBits = 8;
 Fixed::Fixed( void ) : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;

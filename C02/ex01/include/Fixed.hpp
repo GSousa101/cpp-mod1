@@ -16,7 +16,7 @@ class Fixed
 		~Fixed( void );
 
 		// Overload operation
-		Fixed &		operator=( Fixed const & rhs );
+		Fixed &		operator=( Fixed const & other );
 
 		// Member functions
 		int		getRawBits( void ) const;

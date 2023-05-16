@@ -15,6 +15,19 @@ Fixed::Fixed( const Fixed & other )
 	*this = other;
 }
 
+Fixed::Fixed( int const value)
+{
+	std::cout << "Int constructor called" << std::endl;
+	(void) value;
+
+}
+
+Fixed::Fixed(float const value)
+{
+	std::cout << "Float constructor called" << std::endl;
+	(void) value;
+}
+
 Fixed::~Fixed( void )
 {
 	std::cout << "Destructor called"  << std::endl;
@@ -35,6 +48,12 @@ Fixed &				Fixed::operator=( Fixed const & other )
 	return *this;
 }
 
+std::ostream &			operator<<( std::ostream & ostream, Fixed const & obj )
+{
+	ostream << "Value = " << obj.getRawBits();
+	return ostream;
+}
+
 /*
 ** ------------------------------ MEMBER FUNCTIONS ------------------------------
 */
@@ -53,14 +72,14 @@ void			Fixed::setRawBits( int const raw)
 
 float			Fixed::toFloat ( void ) const
 {
-    int scalingFactor = 1 << this->fractionalBits;
+    int scalingFactor = 1 << this->_fractionalBits;
     int fixedPointValue = this->_value * scalingFactor;
     return fixedPointValue;
 }
 
 int				Fixed::toInt ( void ) const
 {
-    int scalingFactor = 1 << this->fractionalBits;
+    int scalingFactor = 1 << this->_fractionalBits;
     int fixedPointValue = this->_value / scalingFactor;
     return fixedPointValue;
 }

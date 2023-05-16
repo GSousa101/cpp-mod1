@@ -11,6 +11,8 @@ class Fixed
 		// Constructions & destructor
 		Fixed( void );
 		Fixed( Fixed const& src );
+		Fixed( int const value );
+		Fixed( float const value);
 		~Fixed( void );
 
 		// Overload operation
@@ -24,9 +26,9 @@ class Fixed
 
 	private:
 		int					_value;
-		int static const	fractionalBits;
+		int static const	_fractionalBits = 8;//Pode estar errado aqui
 };
 
-std::ostream &operator<<(std::ostream &stream, Fixed const &other);
+std::ostream &operator<<(std::ostream &stream, Fixed const& obj);
 
 #endif

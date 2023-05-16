@@ -4,33 +4,24 @@
 ** ------------------------------- CONSTRUCTOR & DESTRUCTOR --------------------------------
 */
 int const		Fixed::_fractionalBits = 8;
-Fixed::Fixed( void ) : _value(0)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+Fixed::Fixed( void ) : _value(0) {}
 
 Fixed::Fixed( const Fixed & other )
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Fixed::Fixed( int const value)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_value = value << this->_fractionalBits;
 }
 
 Fixed::Fixed(float const value)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(value * (1 << this->_fractionalBits));
 }
 
-Fixed::~Fixed( void )
-{
-	std::cout << "Destructor called"  << std::endl;
-}
+Fixed::~Fixed( void ) {}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -40,14 +31,45 @@ Fixed&				Fixed::operator=( Fixed const & other )
 {
 	if ( this != &other )
 	{
-		std::cout << "Copy assignment operator called" << std::endl;
 		this->_value = other.getRawBits();
 		return (*this);
 	}
 	return *this;
 }
 
-std::ostream&			operator<<( std::ostream & ostream, Fixed const & obj )
+bool		Fixed::operator>( Fixed const& other )
+{
+	return (this->getRawBits() > other.getRawBits())
+}
+
+bool		Fixed::operator<( Fixed const& other )
+{
+	return (this->getRawBits() < other.getRawBits())
+}
+
+bool		Fixed::operator>=( Fixed const& other )
+{
+	return (this->getRawBits() >= other.getRawBits())
+}
+
+bool		Fixed::operator<=( Fixed const& other )
+{
+	return (this->getRawBits() <= other.getRawBits())
+}
+
+bool		Fixed::operator==( Fixed const& other )
+{
+	return (this->getRawBits() == other.getRawBits())
+}
+
+bool		Fixed::operator!=( Fixed const& other )
+{
+	return (this->getRawBits() != other.getRawBits())
+}
+
+
+
+std::ostream&		operator<<( std::ostream & ostream, Fixed const & obj )
 {
 	ostream << obj.toFloat();
 	return ostream;

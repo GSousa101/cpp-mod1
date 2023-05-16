@@ -16,13 +16,36 @@ class Fixed
 		~Fixed( void );
 
 		// Overload operation
-		Fixed &		operator=( Fixed const & rhs );
+		Fixed&		operator=( Fixed const& other );
+
+		bool		operator>( Fixed const& other );
+		bool		operator<( Fixed const& other );
+		bool		operator>=( Fixed const& other );
+		bool		operator<=( Fixed const& other );
+		bool		operator==( Fixed const& other );
+		bool		operator!=( Fixed const& other );
+
+		Fixed&		operator+( Fixed const& other ) const;
+		Fixed&		operator-( Fixed const& other ) const;
+		Fixed&		operator*( Fixed const& other ) const;
+		Fixed&		operator/( Fixed const& other ) const;
+		
+		Fixed&		operator++( void );
+		Fixed&		operator--( void );
+		Fixed		operator++( int );
+		Fixed		operator--( int );
 
 		// Member functions
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
-		int		toInt( void ) const;
-		float	toFloat( void ) const;
+		int			getRawBits( void ) const;
+		void		setRawBits( int const raw );
+		int			toInt( void ) const;
+		float		toFloat( void ) const;
+
+		// static member functions
+		static const Fixed& max(const Fixed& first, const Fixed& second);
+		static Fixed&		max(Fixed& first, Fixed& second);
+		static const Fixed&	min(const Fixed& first, const Fixed& second);
+		static Fixed&		min(Fixed& first, Fixed& second);
 
 	private:
 		int					_value;

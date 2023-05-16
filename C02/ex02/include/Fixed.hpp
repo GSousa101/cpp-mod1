@@ -24,7 +24,7 @@ class Fixed
 		bool		operator<=( Fixed const& other ) const;
 		bool		operator==( Fixed const& other ) const;
 		bool		operator!=( Fixed const& other ) const;
-
+		// Basic operation
 		Fixed&		operator+( Fixed const& other );
 		Fixed&		operator-( Fixed const& other );
 		Fixed&		operator*( Fixed const& other );

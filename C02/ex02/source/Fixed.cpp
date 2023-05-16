@@ -67,6 +67,10 @@ bool		Fixed::operator!=( Fixed const& other ) const
 	return (this->getRawBits() != other.getRawBits());
 }
 
+/*
+** ------------------------------ BASIC OPERATION ------------------------------
+*/
+
 Fixed& Fixed::operator+(Fixed const& other) {
   this->_value = this->getRawBits() + other.getRawBits();
   return (*this);
@@ -137,12 +141,12 @@ float		Fixed::toFloat ( void ) const
 ** ------------------- STATIC MEMBER FUNCTIONS ------------------------------
 */
 
-const Fixed& 	Fixed::max(Fixed const& first, Fixed const& second)
+const Fixed& 		Fixed::max(Fixed const& first, Fixed const& second)
 {
 	return (first > second ? first : second);
 }
 
-Fixed&			Fixed::max(Fixed& first, Fixed& second)
+Fixed&				Fixed::max(Fixed& first, Fixed& second)
 {
 	return (first > second ? first : second);
 
@@ -154,7 +158,7 @@ const Fixed&		Fixed::min(Fixed const& first, Fixed const& second)
 
 }
 
-Fixed&			Fixed::min(Fixed& first, Fixed& second)
+Fixed&				Fixed::min(Fixed& first, Fixed& second)
 {
 	return (first < second ? first : second);
 

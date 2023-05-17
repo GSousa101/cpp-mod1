@@ -1,24 +1,39 @@
 #include "ClapTrap.hpp"
 
 /*
-** ------------------------------- CONSTRUCTOR --------------------------------
+** --------------------------- CONSTRUCTOR & DESTRUCTOR -----------------------------
 */
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap( void )
 {
+	this->_name = "John Doe";
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap & src )
+ClapTrap::ClapTrap( std::string newName)
 {
+	this->_name = newName;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	std::cout << "Name constructor called" << std::endl;
 }
 
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
+ClapTrap::ClapTrap( ClapTrap const& other )
+{
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+	std::cout << "Copy constructor called" << std::endl;
+}
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "Destructor called" << std::endl;
 }
 
 
@@ -26,12 +41,16 @@ ClapTrap::~ClapTrap()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ClapTrap&				ClapTrap::operator=( ClapTrap const & other )
+ClapTrap&			ClapTrap::operator=( ClapTrap const& other )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &other )
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+		std::cout << "Copy assignment operator overload called" << std::endl;
+	}
 	return *this;
 }
 

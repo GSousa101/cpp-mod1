@@ -10,7 +10,8 @@ class ClapTrap
 	public:
 
 		ClapTrap();
-		ClapTrap( ClapTrap const & src );
+		ClapTrap( std::string newName)
+		ClapTrap( ClapTrap const& other );
 		~ClapTrap();
 
 		ClapTrap&		operator=( ClapTrap const& other );

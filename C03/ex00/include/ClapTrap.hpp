@@ -28,6 +28,6 @@ class ClapTrap
 		unsigned int _attackDamage;
 };
 
-std::ostream &			operator<<( std::ostream& ostream, ClapTrap const& obj );
+std::ostream&		operator<<( std::ostream& ostream, ClapTrap const& obj );
 
 #endif

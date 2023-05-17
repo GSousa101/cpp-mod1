@@ -10,7 +10,7 @@ class ClapTrap
 	public:
 
 		ClapTrap();
-		ClapTrap( std::string newName)
+		ClapTrap( std::string newName);
 		ClapTrap( ClapTrap const& other );
 		~ClapTrap();
 
@@ -28,7 +28,5 @@ class ClapTrap
 		unsigned int _energyPoints;
 		unsigned int _attackDamage;
 };
-
-std::ostream&		operator<<( std::ostream& ostream, ClapTrap const& obj );
 
 #endif

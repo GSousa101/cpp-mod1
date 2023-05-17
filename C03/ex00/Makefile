@@ -1,4 +1,4 @@
-NAME		=	ClapTrap
+NAME		=	clapTrap
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX		:=	c++

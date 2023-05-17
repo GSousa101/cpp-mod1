@@ -2,6 +2,8 @@
 
 int main( void )
 {
-    ClapTrap("Jack");
-    ClapTrap("Austin");
+    ClapTrap jack("Jack");
+    ClapTrap dom;
+
+    dom.beRepaired(2);
 }

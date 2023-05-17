@@ -88,8 +88,8 @@ void				ClapTrap::beRepaired(unsigned int amount)
 	if (this->_hitPoints <= 0)
 		message (this->_name + " can't be repaired because the soul has left the body!");
 	if (this->_energyPoints <= 0)
-		message(this->_name + " can't be repaired because hasn't enough energyPoints!");
+		message(this->_name + " can't be repaired because doesn't have enough energyPoints!");
 	this->_hitPoints += amount;
 	this->_energyPoints--;
-	std::cout << this->_name << " repair " << amount << " hitpoints!";
+	std::cout << this->_name << " repair " << amount << " hitpoints. Total: " << this->_hitPoints << std::endl;
 }

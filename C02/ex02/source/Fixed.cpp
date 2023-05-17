@@ -18,7 +18,7 @@ Fixed::Fixed( int const value)
 
 Fixed::Fixed(float const value)
 {
-	this->_value = roundf(value * (1 << this->_fractionalBits));
+	this->_value = roundf(value * (1 << this->_fractionalBits));//Incluir math?
 }
 
 Fixed::~Fixed( void ) {}

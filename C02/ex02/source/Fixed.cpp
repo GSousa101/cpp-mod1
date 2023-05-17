@@ -4,6 +4,7 @@
 ** ------------------------------- CONSTRUCTOR & DESTRUCTOR --------------------------------
 */
 int const		Fixed::_fractionalBits = 8;
+
 Fixed::Fixed( void ) : _value(0) {}
 
 Fixed::Fixed( const Fixed & other )
@@ -18,7 +19,7 @@ Fixed::Fixed( int const value)
 
 Fixed::Fixed(float const value)
 {
-	this->_value = roundf(value * (1 << this->_fractionalBits));//Incluir math?
+	this->_value = roundf(value * (1 << this->_fractionalBits));
 }
 
 Fixed::~Fixed( void ) {}
@@ -27,7 +28,7 @@ Fixed::~Fixed( void ) {}
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Fixed&		Fixed::operator=( Fixed const & other )
+Fixed&		Fixed::operator=( Fixed const& other )
 {
 	if ( this != &other )
 	{
@@ -71,25 +72,29 @@ bool		Fixed::operator!=( Fixed const& other ) const
 ** ------------------------------ BASIC OPERATION ------------------------------
 */
 
-Fixed& Fixed::operator+(Fixed const& other) {
-  this->_value = this->getRawBits() + other.getRawBits();
-  return (*this);
+Fixed Fixed::operator+(Fixed const& other) {
+  Fixed result;
+  result._value = this->getRawBits() + other.getRawBits();
+  return (result);
 }
 
-Fixed& Fixed::operator-(Fixed const& other) {
-  this->_value = this->getRawBits() - other.getRawBits();
-  return (*this);
+Fixed Fixed::operator-(Fixed const& other) {
+  Fixed result;
+  result._value = this->getRawBits() - other.getRawBits();
+  return (result);
 }
 
-  // dividimos o resultado por 256 (right shift de 8 bits) p/ o operador << conseguir printar esse resultado como float corretamente
-Fixed& Fixed::operator*(Fixed const& other) {
-  this->_value = (this->getRawBits() * other.getRawBits() >> this->_fractionalBits);
-  return (*this);
+// multiplicamos o resultado por 256 (ligar o primeiro bit da esquerda) p/ o operador << conseguir printar esse resultado como float corretamente
+Fixed Fixed::operator*(Fixed const& other) {
+  Fixed result;
+  result._value = (this->getRawBits() * other.getRawBits()) >> this->_fractionalBits;
+  return (result);
 }
 
-  // multiplicamos o resultado por 256 (ligar o primeiro bit da esquerda) p/ o operador << conseguir printar esse resultado como float corretamente
-Fixed& Fixed::operator/(Fixed const& other) {
-  this->_value = (this->getRawBits() / other.getRawBits() * (1 << this->_fractionalBits));
+// dividimos o resultado por 256 (right shift de 8 bits) p/ o operador << conseguir printar esse resultado como float corretamente
+Fixed Fixed::operator/(Fixed const& other) {
+  Fixed result;
+  result._value = (this->getRawBits() / other.getRawBits() * (1 << this->_fractionalBits));
   return (*this);
 }
 

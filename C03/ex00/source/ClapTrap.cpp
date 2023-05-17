@@ -6,7 +6,7 @@
 
 ClapTrap::ClapTrap( void )
 {
-	this->_name = "John Doe";
+	this->_name = "Dom Quixote";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
@@ -65,6 +65,17 @@ std::ostream &			operator<<( std::ostream& ostream, ClapTrap const& obj )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void message(std::string str) { std::cout << str << std::endl; }
+
+void				CrapTrap::attack(std::string const& target)
+{
+	if (this->_energyPoints == 0)
+		return message(this->_name + " don't have enough points to attack");
+	if (this->_hitPoints == 0)
+		return message(this->_name + " is dead, cannot attack");
+	this->_energyPoints--;
+	std::cout << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

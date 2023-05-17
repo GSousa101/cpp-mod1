@@ -84,18 +84,18 @@ Fixed Fixed::operator-(Fixed const& other) {
   return (result);
 }
 
-// multiplicamos o resultado por 256 (ligar o primeiro bit da esquerda) p/ o operador << conseguir printar esse resultado como float corretamente
+// Dividimos o resultado por 256 (ligar o primeiro bit da esquerda) p/ o operador << conseguir printar esse resultado como float corretamente
 Fixed Fixed::operator*(Fixed const& other) {
   Fixed result;
   result._value = (this->getRawBits() * other.getRawBits()) >> this->_fractionalBits;
   return (result);
 }
 
-// dividimos o resultado por 256 (right shift de 8 bits) p/ o operador << conseguir printar esse resultado como float corretamente
+// Multiplicamos o resultado por 256 (right shift de 8 bits) p/ o operador << conseguir printar esse resultado como float corretamente
 Fixed Fixed::operator/(Fixed const& other) {
   Fixed result;
-  result._value = (this->getRawBits() / other.getRawBits() * (1 << this->_fractionalBits));
-  return (*this);
+  result._value = (this->getRawBits() / other.getRawBits()) << this->_fractionalBits;
+  return (result);
 }
 
 Fixed& Fixed::operator++(void) {
@@ -104,20 +104,22 @@ Fixed& Fixed::operator++(void) {
 }
 
 Fixed Fixed::operator++(int) {
-  Fixed temp = *this;
+  Fixed toPrint = *this;
+  
   ++this->_value;
-  return (temp);
-}
-
-Fixed Fixed::operator--(int) {
-  Fixed temp = *this;
-  --this->_value;
-  return (temp);
+  return (toPrint);
 }
 
 Fixed& Fixed::operator--(void) {
   --this->_value;
   return (*this);
+}
+
+Fixed Fixed::operator--(int) {
+  Fixed toPrint = *this;
+
+  --this->_value;
+  return (toPrint);
 }
 
 std::ostream&		operator<<( std::ostream & ostream, Fixed const & obj )

@@ -23,7 +23,6 @@ FragTrap::FragTrap( const FragTrap& other )
 	std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -32,7 +31,6 @@ FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap Destructor called" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------

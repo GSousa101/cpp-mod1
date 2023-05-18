@@ -5,7 +5,7 @@ CXX		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
-FILES		:=	ClapTrap.cpp
+FILES		:=	ClapTrap.cpp ScavTrap.cpp
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main.cpp

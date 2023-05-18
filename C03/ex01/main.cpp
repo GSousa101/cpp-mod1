@@ -1,20 +1,21 @@
 #include "include/ClapTrap.hpp"
+#include "include/ScavTrap.hpp"
 
 int main( void )
 {
     {
-        ClapTrap dom;
+        ScavTrap jack;
 
-        dom.attack("Moinho de vento");
-        dom.takeDamage(4);
-        dom.takeDamage(2);
-        dom.takeDamage(1);
-        dom.takeDamage(1);
-        dom.beRepaired(2);
-        dom.attack("Robbers");
-        dom.attack("inners");
-        dom.takeDamage(6);
-        dom.takeDamage(6);
-        dom.beRepaired(1);
+        jack.attack("black beard");
+        jack.takeDamage(4);
+        jack.takeDamage(2);
+        jack.takeDamage(1);
+        jack.takeDamage(1);
+        jack.beRepaired(2);
+        jack.attack("red beard");
+        jack.attack("Will Turner");
+        jack.takeDamage(6);
+        jack.takeDamage(6);
+        jack.beRepaired(1);
     }
 }

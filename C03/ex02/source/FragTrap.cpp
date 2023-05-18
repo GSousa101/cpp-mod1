@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap( void ) : ClapTrap( "Jack Spearrow", 100, 100, 30)
+FragTrap::FragTrap( void ) : ClapTrap( "Lewis Hamilton", 100, 100, 30)
 {
 	std::cout << "FragTrap Default constructor called" << std::endl;
 }
@@ -54,14 +54,14 @@ FragTrap &				FragTrap::operator=( FragTrap const& other )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void messageRed( std::string message )
+static void messageRed( std::string message )
 {
 	std::cout << RED << message << RESET << std::endl;
 }
 
-void messageGreen( std::string message )
+static void messageMagenta( std::string message )
 {
-	std::cout << GREEN << message << RESET << std::endl;
+	std::cout << MAGENTA << message << RESET << std::endl;
 }
 
 void			FragTrap::attack(std::string const& target)
@@ -74,7 +74,7 @@ void			FragTrap::attack(std::string const& target)
 	std::cout << RED << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << RESET << std::endl;
 }
 
-void			FragTrap::guardGate( void ) const
+void			FragTrap::highFivesGuys( void ) const
 {
-	messageGreen("FragTrap " + this->_name + " have enterred in Gate keeper mode.");
+	messageMagenta("FragTrap " + this->_name + ": \"give me a high five guys\".");
 }

@@ -6,16 +6,16 @@
 # include "Color.hpp"
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 
 	public:
 
-		ScavTrap();
-		ScavTrap( std::string newName);
-		ScavTrap( ScavTrap const& other );
-		~ScavTrap();
-		ScavTrap&		operator=( ScavTrap const& other );
+		FragTrap();
+		FragTrap( std::string newName);
+		FragTrap( FragTrap const& other );
+		~FragTrap();
+		FragTrap&		operator=( FragTrap const& other );
 
 		void			attack(std::string const& target);
 		void			highFivesGuys( void ) const;

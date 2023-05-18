@@ -1,11 +1,11 @@
-NAME		=	scavTrap
+NAME		=	fragTrap
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX		:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
-FILES		:=	ClapTrap.cpp ScavTrap.cpp
+FILES		:=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main.cpp

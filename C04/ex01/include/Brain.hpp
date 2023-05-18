@@ -18,6 +18,5 @@ public:
     Brain&              operator=(Brain const& other);
 
     std::string const&  getIdea( void ) const;
-    // void                setIdea( void );
 };
 #endif

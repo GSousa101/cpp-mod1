@@ -39,20 +39,5 @@ int main( void ) {
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
 
 }
-// {
-//     std::cout << std::endl << "______DEEP COPY 2______" << std::endl;
-//     Dog kay;
-//     Dog key(kay);
-
-//     std::cout << kay.getIdea() << std::endl;
-//     std::cout << key.getIdea() << std::endl;
-
-//     kay.setIdea();
-
-//     std::cout << kay.getIdea() << std::endl;
-//     std::cout << key.getIdea() << std::endl;
-
-//     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
-// }
     return 0;
 }

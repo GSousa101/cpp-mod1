@@ -54,13 +54,27 @@ ScavTrap &				ScavTrap::operator=( ScavTrap const& other )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+void messageRed( std::string message )
+{
+	std::cout << RED << message << RESET << std::endl;
+}
+
+void messageGreen( std::string message )
+{
+	std::cout << GREEN << message << RESET << std::endl;
+}
 
 void			ScavTrap::attack(std::string const& target)
 {
+	if (this->_hitPoints == 0)
+		return messageRed("ScavTrap " + this->_name + " is dead and cannot attack.");
+	if (this->_energyPoints == 0)
+		return messageRed("ScavTrap " + this->_name + " don't have enough points to attack.");
+	this->_energyPoints--;
 	std::cout << RED << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << RESET << std::endl;
 }
 
 void			ScavTrap::guardGate( void ) const
 {
-	std::cout << GREEN << "ScavTrap " << this->_name << " has enterred in Gate Keeper mode." << RESET << std::endl;
+	messageGreen("ScavTrap " + this->_name + " have enterred in Gate keeper mode.");
 }

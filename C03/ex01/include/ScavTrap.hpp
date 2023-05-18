@@ -3,22 +3,22 @@
 
 # include <iostream>
 # include <string>
+# include "Color.hpp"
+# include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
 
 	public:
 
 		ScavTrap();
+		ScavTrap( std::string newName);
 		ScavTrap( ScavTrap const& other );
 		~ScavTrap();
-
 		ScavTrap&		operator=( ScavTrap const& other );
 
-	private:
-
+		void			attack(std::string const& target);
+		void			guardGate( void ) const;
 };
-
-std::ostream&			operator<<( std::ostream & ostream, ScavTrap const& obj );
 
 #endif

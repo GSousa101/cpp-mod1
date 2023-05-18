@@ -10,7 +10,16 @@ ClapTrap::ClapTrap( void )
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap( std::string newName, int hp, int ep, int ad) :
+	_name(newName),
+	_hitPoints(hp),
+	_energyPoints(ep),
+	_attackDamage(ad)
+{
+	std::cout << "Claptrap Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string newName)
@@ -19,7 +28,7 @@ ClapTrap::ClapTrap( std::string newName)
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << "Name constructor called" << std::endl;
+	std::cout << " ClapTrap Name constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const& other )
@@ -28,12 +37,12 @@ ClapTrap::ClapTrap( ClapTrap const& other )
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 

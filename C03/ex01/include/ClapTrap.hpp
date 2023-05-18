@@ -10,19 +10,20 @@ class ClapTrap
 
 	public:
 
-		ClapTrap();
+		ClapTrap( void );
 		ClapTrap( std::string newName);
+		ClapTrap( std::string newName, int hp, int ep, int ad);
 		ClapTrap( ClapTrap const& other );
-		~ClapTrap();
+		virtual	~ClapTrap();
 
 		ClapTrap&		operator=( ClapTrap const& other );
 
 		// Member functions
-		void		 	attack(std::string const& target);
+		virtual void 	attack(std::string const& target);
 		void		 	takeDamage(unsigned int amount);
 		void 			beRepaired(unsigned int amount);
 
-	private:
+	protected:
 	
 		std::string _name;
 		unsigned int _hitPoints;

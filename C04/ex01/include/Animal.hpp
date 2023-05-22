@@ -8,7 +8,6 @@
 class Animal {
 protected:
     std::string _type;
-    Brain*      _brain;
 
 public:
     //Constructors & destructor
@@ -19,8 +18,6 @@ public:
     Animal&             operator=(const Animal& other);
 
     std::string const&  getType( void ) const;
-    std::string const&  getIdea( void ) const;
-    void                setIdea( void );
     virtual void        makeSound( void ) const;
 };
 #endif

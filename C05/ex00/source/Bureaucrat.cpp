@@ -3,7 +3,7 @@
 /*
 ** --------------------------- CONSTRUCTOR & DESTRUCTOR -----------------------------
 */
-Bureaucrat::Bureaucrat( void ) : _name("Peterson")
+Bureaucrat::Bureaucrat( void ) : _name("John Wick")
 {
 	this->_grade = 150;	
 }
@@ -58,6 +58,7 @@ void				Bureaucrat::incrementGrade( void )
 {
 	if (this->_grade == 1)
 		throw(Bureaucrat::GradeTooHighException());
+	std::cout << CYAN << "Incrementing " << this->_name << "'s grade" << RESET << std::endl;
 	this->_grade--;
 }
 
@@ -65,6 +66,7 @@ void				Bureaucrat::decrementGrade( void )
 {
 	if (this->_grade == 150)
 		throw(Bureaucrat::GradeTooLowException());
+	std::cout << CYAN << "Decrementing " << this->_name << "'s grade" << RESET << std::endl;
 	this->_grade++;
 }
 
@@ -86,6 +88,6 @@ const char*			Bureaucrat::GradeTooHighException::what( void ) const throw()
 */
 std::ostream&		operator<<( std::ostream& o, Bureaucrat const& person)
 {
-	o << person.getName() << ", bureaucrat grade " << person.getGrade() << std::endl;
+	o << person.getName() << ", bureaucrat grade " << person.getGrade() << ".";
 	return o;
 }

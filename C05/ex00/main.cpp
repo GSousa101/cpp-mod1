@@ -6,6 +6,7 @@ int main( void )
 	Bureaucrat Jordan;
 	try 
 	{
+		std::cout << YELLOW << "FIRST TEST" << RESET << std::endl;	
 		std::cout << Jordan << std::endl;
 		Jordan.decrementGrade();
 		std::cout << Jordan << std::endl;
@@ -21,6 +22,7 @@ int main( void )
 	Bureaucrat James("James Duck", 3);
 	try
 	{
+		std::cout << std::endl << YELLOW << "SECOND TEST" << RESET << std::endl;
 		std::cout << James << std::endl;
 		James.incrementGrade();
 		James.incrementGrade();

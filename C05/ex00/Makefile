@@ -26,7 +26,7 @@ all:	$(NAME)
 
 $(NAME): $(SOURCES)
 	@$(CXX) $(CPPFLAGS) $(SOURCES) -o $@ 
-	@echo "$(GREEN) $(NAME) created and ready to be execute$(RESET)"
+	@echo " $(MAGENTA)$(NAME) $(GREEN)created and ready to be execute$(RESET)"
 	
 clean:
 	@echo "$(YELLOW) $(NAME) Wiped out $(RESET)🗑"

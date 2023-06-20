@@ -19,7 +19,8 @@ int main( void ) {
     std::cout << std::endl << "______Testing______" << std::endl;
     for (int i = 0; i < 6; i++)
     {
-        std::cout << animals[i]->getType() << " -> " << animals[i]->getIdea() << std::endl;
+        std::cout << animals[i]->getType() << " -> ";
+        animals[i]->makeSound();
     }
 
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
@@ -34,25 +35,10 @@ int main( void ) {
     Dog toto;
     Dog rex = toto;
 
-    toto.makeSound();
-    rex.makeSound();
+    std::cout << toto.getIdea() << std::endl;
+    std::cout << rex.getIdea() << std::endl;
     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
 
 }
-// {
-//     std::cout << std::endl << "______DEEP COPY 2______" << std::endl;
-//     Dog kay;
-//     Dog key(kay);
-
-//     std::cout << kay.getIdea() << std::endl;
-//     std::cout << key.getIdea() << std::endl;
-
-//     kay.setIdea();
-
-//     std::cout << kay.getIdea() << std::endl;
-//     std::cout << key.getIdea() << std::endl;
-
-//     std::cout << std::endl << "______DESTRUCTORS______" << std::endl;
-// }
     return 0;
 }

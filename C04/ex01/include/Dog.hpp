@@ -10,7 +10,12 @@ public:
             ~Dog( void );
     Dog&    operator=(const Dog& other);
 
-    void    makeSound( void ) const;
+    void                makeSound( void ) const;
+    std::string const&  getIdea( void ) const;
+
+
+    protected:
+        Brain* _brain;
 };
 
 #endif

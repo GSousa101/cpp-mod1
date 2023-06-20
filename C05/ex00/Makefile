@@ -26,10 +26,10 @@ all:	$(NAME)
 
 $(NAME): $(SOURCES)
 	@$(CXX) $(CPPFLAGS) $(SOURCES) -o $@ 
-	@echo " $(MAGENTA)$(NAME) $(GREEN)created and ready to be execute$(RESET)"
+	@echo " $(CYAN)$(NAME) $(GREEN)created and ready to be execute$(RESET)"
 	
 clean:
-	@echo "$(YELLOW) $(NAME) Wiped out $(RESET)🗑"
+	@echo "$(CYAN) $(NAME) $(YELLOW)wiped out $(RESET)🗑"
 	@rm -rf $(NAME)
 
 fclean:	clean

@@ -11,18 +11,16 @@ class Bureaucrat
 	public:
 		// Canonical Form
 				Bureaucrat( void );
-				Bureaucrat( std::string newName);
+				Bureaucrat( std::string newName, int grade);
 				Bureaucrat( Bureaucrat const& other );
 		virtual	~Bureaucrat();
 
 		// Operator Overload
 		Bureaucrat&		operator=( Bureaucrat const& other );
 
-		// Getters and Setters
+		// Getters
 		std::string		getName( void ) const;
-		void			setName( std::string newName );
 		int				getGrade( void ) const;
-		void			setGrade( int newGrade );
 
 		// Member functions
 		void			incrementGrade( void );
@@ -31,12 +29,12 @@ class Bureaucrat
 		// Exceptions
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char*	what( void ) const throw();
+				virtual const char*		what( void ) const throw();
 		};
 
 		class	GradeTooHighException : public std::exception {
 			public:
-				virtual const char*	what( void ) const throw();
+				virtual const char*		what( void ) const throw();
 		};
 
 	private:
@@ -44,5 +42,8 @@ class Bureaucrat
 		int				_grade;
 
 };
+
+// Global Operator Overload
+std::ostream&			operator<<( std::ostream& ostream, Bureaucrat const& rhs );
 
 #endif

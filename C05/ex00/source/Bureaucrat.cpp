@@ -3,7 +3,6 @@
 /*
 ** --------------------------- CONSTRUCTOR & DESTRUCTOR -----------------------------
 */
-
 Bureaucrat::Bureaucrat( void ) : _name("Peterson")
 {
 	this->_grade = 150;	
@@ -55,7 +54,6 @@ int					Bureaucrat::getGrade( void ) const
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
 void				Bureaucrat::incrementGrade( void )
 {
 	if (this->_grade == 1)

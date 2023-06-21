@@ -83,6 +83,19 @@ void				Bureaucrat::signForm(Form& form)
 	}
 }
 
+void				Bureaucrat::executeForm(Form const& form)
+{
+	try
+	{
+		form.action(*this);
+		std::cout << GREEN << this->getName() << " executes " << form.getName() << RESET << std::endl;
+	}
+	catch (std::exception const& e)
+	{
+		std::cerr << RED << this->getName() << " cannot execute " << form.getName() << " because " << e.what() << RESET << std::endl;
+	}
+}
+
 /*
 **	---------------------------- CUSTOMS EXCEPTIONS ---------------------------
 */

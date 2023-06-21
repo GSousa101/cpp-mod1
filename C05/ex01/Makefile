@@ -5,7 +5,7 @@ CXX			:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
-FILES		:=	Bureaucrat
+FILES		:=	Bureaucrat	Form
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main

@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include "Color.hpp"
+# include "Form.hpp"
 
 class Bureaucrat
 {

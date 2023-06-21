@@ -70,14 +70,12 @@ void				Bureaucrat::decrementGrade( void )
 	this->_grade++;
 }
 
-void				signform(Form& form)
+void				Bureaucrat::signForm(Form& form)
 {
-	if (form.getIsSign())
-		return ;
 	try
 	{
 		form.beSigned(*this);
-		std::cout << GREEN << this->_name << " signs " << form.getName() << RESET << std::endl;
+		std::cout << GREEN << *this << " signs " << form.getName() << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{

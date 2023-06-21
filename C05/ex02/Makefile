@@ -5,7 +5,8 @@ CXX			:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
-FILES		:=	Bureaucrat	Form
+FILES		:=	Bureaucrat	AForm	ShrubberyCreationForm	RobotomyRequestForm	\
+				PresidentialPardonForm
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main

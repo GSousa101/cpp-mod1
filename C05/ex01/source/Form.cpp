@@ -38,6 +38,7 @@ Form::~Form() { }
 */
 Form    &Form::operator=( Form const& other)
 {
+	(void) other;
 	std::cout << "It's not possible to make a copy because the attributes are constantes. Create a new instance with the copy constructor." << std::endl;
 	return *this;
 }
@@ -72,6 +73,8 @@ void			Form::beSigned( Bureaucrat const& bureaucrat )
 {
 	if (bureaucrat.getGrade() > this->getGradeToSign())
 		throw(Form::GradeTooLowException());
+//	if (this->getIsSigned())
+//		throw(Form::FormIsAlreadySignedException())
 	this->_isSigned = true;
 }
 
@@ -86,7 +89,7 @@ char const*		Form::GradeTooHighException::what( void ) const throw()
 
 char const*		Form::GradeTooLowException::what( void ) const throw()
 {
-	return ("Grade too low")
+	return ("Grade too low");
 }
 
 char const*		Form::FormIsAlreadySignedException::what( void ) const throw()
@@ -97,7 +100,7 @@ char const*		Form::FormIsAlreadySignedException::what( void ) const throw()
 /*
 ** -----------------------------GLOBAL OVERLOAD ---------------------------------
 */
-std::ostream&	operator<<( std::ostream o, Form const& form)
+std::ostream&	operator<<( std::ostream& o, Form const& form)
 {
 	o << "Form " << form.getName() << "." << std::endl;
 	o << "signed: " << YELLOW << form.getIsSigned() << "." << RESET << std::endl;

@@ -5,6 +5,8 @@
 # include "Color.hpp"
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 

@@ -84,17 +84,17 @@ void			Form::beSigned( Bureaucrat const& bureaucrat )
 
 char const*		Form::GradeTooHighException::what( void ) const throw()
 {
-	return ("Grade too high");
+	return ("Grade too high.");
 }
 
 char const*		Form::GradeTooLowException::what( void ) const throw()
 {
-	return ("Grade too low");
+	return ("Grade too low.");
 }
 
 char const*		Form::FormIsAlreadySignedException::what( void ) const throw()
 {
-	return ("Form is already signed");
+	return ("Form is already signed.");
 }
 
 /*
@@ -102,9 +102,9 @@ char const*		Form::FormIsAlreadySignedException::what( void ) const throw()
 */
 std::ostream&	operator<<( std::ostream& o, Form const& form)
 {
-	o << "Form " << form.getName() << "." << std::endl;
-	o << "signed: " << YELLOW << form.getIsSigned() << "." << RESET << std::endl;
-	o << "Grande to sign: " << YELLOW << form.getGradeToSign() << "." << RESET << std::endl;
+	o << "Form name:\t " << YELLOW << form.getName() << RESET << "." << std::endl;
+	o << "signed:\t\t " << YELLOW << form.getIsSigned() << "." << RESET << std::endl;
+	o << "Grande to sign:\t " << YELLOW << form.getGradeToSign() << "." << RESET << std::endl;
 	o << "Grade to execute: " << YELLOW << form.getGradeToExec() << "." << RESET << std::endl;
 	return o;
 }

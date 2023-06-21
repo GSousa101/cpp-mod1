@@ -82,20 +82,27 @@ void			Form::beSigned( Bureaucrat const& bureaucrat )
 ** --------------------------------- EXCEPTIONS ----------------------------------
 */
 
-char const*		Form::GradeTooHighException::what( void ) const throw()
-{
-	return ("Grade too high.");
+Form::GradeTooLowException::GradeTooLowException() : _message("Grade too low.")
+{ }
+
+const char* Form::GradeTooLowException::what() const throw() {
+    return _message;
 }
 
-char const*		Form::GradeTooLowException::what( void ) const throw()
-{
-	return ("Grade too low.");
+Form::GradeTooHighException::GradeTooHighException() : _message("Grade too high.")
+{ }
+
+const char* Form::GradeTooHighException::what() const throw() {
+    return _message;
 }
 
-char const*		Form::FormIsAlreadySignedException::what( void ) const throw()
-{
-	return ("Form is already signed.");
+Form::FormIsAlreadySignedException::FormIsAlreadySignedException() : _message("Form is already signed.")
+{ }
+
+const char* Form::FormIsAlreadySignedException::what() const throw() {
+    return _message;
 }
+
 
 /*
 ** -----------------------------GLOBAL OVERLOAD ---------------------------------

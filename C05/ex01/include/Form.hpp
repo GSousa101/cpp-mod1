@@ -28,20 +28,30 @@ class Form
 		void			beSigned(Bureaucrat const& bureaucrat);
 
 		// Exceptions
-		class GradeTooLowException : public std::exception {
+		class		GradeTooLowException : public std::exception {
 			public:
-				virtual const char*		what( void ) const throw();
+				GradeTooLowException();
+				virtual const char* what() const throw();
+			private:
+				const char* _message;
 		};
 
-		class	GradeTooHighException : public std::exception {
+		class		GradeTooHighException : public std::exception {
 			public:
-				virtual const char*		what( void ) const throw();
+				GradeTooHighException();
+				virtual const char* what() const throw();
+			private:
+				const char* _message;
 		};
 
-		class	FormIsAlreadySignedException : public std::exception {
+		class		FormIsAlreadySignedException : public std::exception {
 			public:
-				virtual const char*		what( void ) const throw();
+				FormIsAlreadySignedException();
+				virtual const char* what() const throw();
+			private:
+				const char* _message;
 		};
+
 
 	private:
 		std::string const	_name;

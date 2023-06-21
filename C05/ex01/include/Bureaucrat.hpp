@@ -45,6 +45,6 @@ class Bureaucrat
 };
 
 // Global Operator Overload
-std::ostream&			operator<<( std::ostream& ostream, Bureaucrat const& rhs );
+std::ostream&			operator<<( std::ostream& o, Bureaucrat const& person );
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include "Color.hpp"
@@ -7,16 +7,16 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 
 	public:
-		// Canonical Form
-					Form( void );
-					Form( std::string newName, int gradeToSign, int gradeToExec);
-					Form( Form const& other );
-		virtual		~Form();
-		Form&		operator=( Form const& other );
+		// Canonical form
+					AForm( void );
+					AForm( std::string newName, int gradeToSign, int gradeToExec);
+					AForm( AForm const& other );
+		virtual		~AForm();
+		AForm&		operator=( AForm const& other );
 
 		// Getters
 		std::string		getName( void ) const;
@@ -26,6 +26,8 @@ class Form
 
 		// Member functions
 		void			beSigned(Bureaucrat const& bureaucrat);
+		void			execute( Bureaucrat const& executor ) const;
+		virtual void	action( Bureaucrat const& executor ) const = 0;
 
 		// Exceptions
 		class		GradeTooLowException : public std::exception {
@@ -52,6 +54,13 @@ class Form
 				const char* _message;
 		};
 
+		class		NotPermittedToExecuteException : public std::exception {
+			public:
+				NotPermittedToExecuteException();
+				virtual const char* what() const throw();
+			private:
+				const char* _message;
+		};
 
 	private:
 		std::string const	_name;
@@ -62,6 +71,6 @@ class Form
 };
 
 // Global Operator Overload
-std::ostream&			operator<<( std::ostream& o, Form const& form );
+std::ostream&			operator<<( std::ostream& o, AForm const& AForm );
 
 #endif

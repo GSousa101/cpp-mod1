@@ -20,10 +20,10 @@ class Form
 		std::string		getName( void ) const;
 		bool			getIsSigned( void ) const;
 		int				getGradeToSign( void ) const;
-		int				getGradeToExecute( void ) const;
+		int				getGradeToExec( void ) const;
 
 		// Member functions
-		void			beSigned(Bureaucrat& bureaucrat);
+		void			beSigned(Bureaucrat const& bureaucrat);
 
 		// Exceptions
 		class GradeTooLowException : public std::exception {
@@ -32,6 +32,11 @@ class Form
 		};
 
 		class	GradeTooHighException : public std::exception {
+			public:
+				virtual const char*		what( void ) const throw();
+		};
+
+		class	FormIsAlreadySignedException : public std::exception {
 			public:
 				virtual const char*		what( void ) const throw();
 		};

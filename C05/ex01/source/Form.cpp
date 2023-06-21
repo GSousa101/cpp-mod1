@@ -73,8 +73,8 @@ void			Form::beSigned( Bureaucrat const& bureaucrat )
 {
 	if (bureaucrat.getGrade() > this->getGradeToSign())
 		throw(Form::GradeTooLowException());
-//	if (this->getIsSigned())
-//		throw(Form::FormIsAlreadySignedException())
+	if (this->getIsSigned())
+		throw(Form::FormIsAlreadySignedException());
 	this->_isSigned = true;
 }
 

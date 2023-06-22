@@ -1,4 +1,4 @@
-NAME		=	StackOfPapers
+NAME		=	SupremePapers
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX			:=	c++

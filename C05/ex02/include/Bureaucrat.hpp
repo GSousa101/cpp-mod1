@@ -6,7 +6,7 @@
 # include "Color.hpp"
 # include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -28,8 +28,8 @@ class Bureaucrat
 		// Member functions
 		void			incrementGrade( void );
 		void			decrementGrade( void );
-		void			signForm(Form& form);
-		void			executeForm(Form const& form);
+		void			signForm(AForm& form);
+		void			executeForm(AForm const& form);
 
 		// Exceptions
 		class GradeTooLowException : public std::exception {

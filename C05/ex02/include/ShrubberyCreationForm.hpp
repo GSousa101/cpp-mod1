@@ -1,17 +1,17 @@
-#ifndef SHRUBEERYCREATIONFORM_HPP
-# define SHRUBEERYCREATIONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 # include <fstream>
 # include "AForm.hpp"
 
-class       ShrubeeryCreationForm : public AForm
+class       ShrubberyCreationForm : public AForm
 {
     public:
-                ShrubeeryCreationForm( void );
-                ShrubeeryCreationForm( std::string const& target);
-                ShrubeeryCreationForm( ShrubeeryCreationForm const& other );
-        virtual ~ShrubeeryCreationForm( void );
-        ShrubeeryCreationForm&  operator=( ShrubeeryCreationForm const& other );
+                ShrubberyCreationForm( void );
+                ShrubberyCreationForm( std::string const& target);
+                ShrubberyCreationForm( ShrubberyCreationForm const& other );
+        virtual ~ShrubberyCreationForm( void );
+        ShrubberyCreationForm&  operator=( ShrubberyCreationForm const& other );
 
         // Methods
         virtual void    action( Bureaucrat const& executor ) const;

@@ -1,4 +1,4 @@
-NAME		=	SupremePapers
+NAME		=	ExtraPapers
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX			:=	c++
@@ -6,7 +6,7 @@ CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
 FILES		:=	Bureaucrat	AForm	ShrubberyCreationForm	RobotomyRequestForm	\
-				PresidentialPardonForm
+				PresidentialPardonForm	Intern
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main

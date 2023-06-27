@@ -1,14 +1,14 @@
-#include "ScalarConverter.hpp"
+#include "Scalar.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ScalarConverter::ScalarConverter()
+Scalar::Scalar()
 {
 }
 
-ScalarConverter::ScalarConverter( const ScalarConverter & src )
+Scalar::Scalar( const Scalar & src )
 {
 }
 
@@ -17,7 +17,7 @@ ScalarConverter::ScalarConverter( const ScalarConverter & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-ScalarConverter::~ScalarConverter()
+Scalar::~Scalar()
 {
 }
 
@@ -26,16 +26,16 @@ ScalarConverter::~ScalarConverter()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ScalarConverter &				ScalarConverter::operator=( ScalarConverter const & rhs )
+Scalar &				Scalar::operator=( Scalar const & other )
 {
-	//if ( this != &rhs )
+	//if ( this != &other )
 	//{
-		//this->_value = rhs.getValue();
+		//this->_value = other.getValue();
 	//}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, ScalarConverter const & i )
+std::ostream &			operator<<( std::ostream & o, Scalar const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;
@@ -46,6 +46,14 @@ std::ostream &			operator<<( std::ostream & o, ScalarConverter const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+bool	isPseudoLiteral(const std::string &literal) {
+	std::string pseudo[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
+
+	for (int i = 0; i < 6; i++) {
+		if (literal == pseudo[i])
+			return true;
+  }
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

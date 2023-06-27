@@ -97,5 +97,18 @@ bool	isPseudoLiteral(const std::string &literal) {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+/*
+** ------------------------------- EXCEPTIONS --------------------------------
+*/
+
+const char *Scalar::InvalidConversionException::what() const throw()
+{
+    return "Error: InvalidConversionException - Invalid conversion detected";
+}
+
+const char *Scalar::OverflowException::what() const throw()
+{
+    return "Error: OverflowException - Overflow detected";
+}
 
 /* ************************************************************************** */

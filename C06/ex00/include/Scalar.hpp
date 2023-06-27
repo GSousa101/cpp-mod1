@@ -1,24 +1,34 @@
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef SCALAR_HPP
+# define SCALAR_HPP
 
 # include <iostream>
 # include <string>
 
-class ScalarConverter
+class Scalar
 {
 
 	public:
-
-		ScalarConverter();
-		ScalarConverter( ScalarConverter const & src );
-		~ScalarConverter();
-
-		ScalarConverter &		operator=( ScalarConverter const & rhs );
+		Scalar &		operator=( Scalar const & other );
 
 	private:
+		Scalar();
+		Scalar( Scalar const & src );
+		~Scalar();
+
+	
+
+    class InvalidConversionException : public std::exception {
+    public:
+        virtual const char *what() const throw();
+    };
+
+    class OverflowException : public std::exception {
+    public:
+        virtual const char *what() const throw();
+    };
 
 };
 
-std::ostream &			operator<<( std::ostream & o, ScalarConverter const & i );
+std::ostream &			operator<<( std::ostream & o, Scalar const & i );
 
-#endif /* ************************************************* SCALARCONVERTER_H */
+#endif /* ************************************************* SCALAR_H */

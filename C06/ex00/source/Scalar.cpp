@@ -91,42 +91,10 @@ bool    Scalar::isDouble(std::string const& str)
 
 }
 
-void Scalar::castChar( char const *str )
+void    Scalar::castChar( std::String const& str)
 {
-    this->_charRepr   = str[0];
-    this->_intRepr    = static_cast<long int>( this->_charRepr );
-    this->_floatRepr  = static_cast<float>( this->_charRepr );
-    this->_doubleRepr = static_cast<double>( this->_charRepr );
-}
 
-void Scalar::castInt( char const *str )
-{
-    this->_intRepr = std::atol( str );
-    if ( this->_intRepr > std::numeric_limits<int>::max()
-        || this->_intRepr < std::numeric_limits<int>::min() ) {
-        throw Scalar::OverflowException();
-    }
-    this->_charRepr   = static_cast<char>( this->_intRepr );
-    this->_floatRepr  = static_cast<float>( this->_intRepr );
-    this->_doubleRepr = static_cast<double>( this->_intRepr );
 }
-
-void Scalar::castDouble( char const *str )
-{
-    this->_doubleRepr = std::strtod( str, NULL );
-    this->_charRepr   = static_cast<char>( this->_doubleRepr );
-    this->_intRepr    = static_cast<long int>( this->_doubleRepr );
-    this->_floatRepr  = static_cast<float>( this->_doubleRepr );
-}
-
-void Scalar::castFloat( char const *str )
-{
-    this->_floatRepr  = std::atof( str );
-    this->_charRepr   = static_cast<char>( this->_floatRepr );
-    this->_intRepr    = static_cast<long int>( this->_floatRepr );
-    this->_doubleRepr = static_cast<double>( this->_floatRepr );
-}
-
 
 
 bool	isPseudoLiteral(const std::string &literal) {

@@ -8,14 +8,21 @@ class Scalar
 {
 
 	public:
-		Scalar &		operator=( Scalar const & other );
+		~Scalar( void );
 
 	private:
-		Scalar();
+		Scalar( void );
 		Scalar( Scalar const & src );
-		~Scalar();
+		Scalar &		operator=( Scalar const & other );
 
-	
+    static void convert(const std::string &literal);	
+
+    bool    isChar (std::string const& str);
+    bool    isInt (std::string const& str);
+    bool    isFloat (std::string const& str);
+    bool    isDouble (std::string const& str);
+
+
 
     class InvalidConversionException : public std::exception {
     public:

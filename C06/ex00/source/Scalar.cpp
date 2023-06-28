@@ -43,24 +43,51 @@ std::ostream &			operator<<( std::ostream & o, Scalar const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-bool    isChar(std::string const& str)
+bool    Scalar::isChar(std::string const& str)
 {
-        
-
+    if (std.lenght() == 1 && std::isdigit(str[0] == 0)
+        return true;
+    return false;
 }
 
-bool    isInt(std::string const& str)
+bool    Scalar::isInt(std::string const& str)
 {
-
+    for (size_t i =; i < std.lenght(); i++)
+    {
+        if (str[i] == '-' && i == 0)
+            continue;
+        if (std::isdigit(str[i]) == 0)
+            return false;
+    }
+    return true;
 }
 
-bool    isFloat(std::string const& str)
+bool    Scalar::isFloat(std::string const& str)
 {
-
+    if (str.find('f') == std::string::npos)
+        return false;
+    for (size_t i = 0; i < std.lenght(); i++)
+    {
+        if (str[i] == '-' && i == 0)
+            continue;
+        if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != 'f')
+            return false;
+    }
+    return true;
 }
 
-bool    isDouble(std::string const& str)
+bool    Scalar::isDouble(std::string const& str)
 {
+    if (str.find('.') == std::string::npos)
+        return false;
+    for (size_t i = 0; i < std.lenght(); i++)
+    {
+        if (str[i] == '-' && i == 0)
+            continue;
+        if (!std::isdigit(str[i]) && str[i] != '.')
+            return false;
+    }
+    return true;
 
 }
 

@@ -1,26 +1,19 @@
 #include "../include/Scalar.hpp"
 
-std::ostream &			operator<<( std::ostream & o, Scalar const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
 /*
 ** --------------------------------- CHECKERS ----------------------------------
 */
 
 bool    Scalar::isChar(std::string const& str)
 {
-    if (std.lenght() == 1 && std::isdigit(str[0] == 0)
+    if (str.length() == 1 && std::isdigit(str[0] == 0))
         return true;
     return false;
 }
 
 bool    Scalar::isInt(std::string const& str)
 {
-    for (size_t i =; i < std.lenght(); i++)
+    for (size_t i = 0; i < str.length(); i++)
     {
         if (str[i] == '-' && i == 0)
             continue;
@@ -34,12 +27,12 @@ bool    Scalar::isFloat(std::string const& str)
 {
     if (str.find('f') == std::string::npos)
         return false;
-    for (size_t i = 0; i < std.lenght(); i++)
+    for (size_t i = 0; i < str.length(); i++)
     {
         if (str[i] == '-' && i == 0)
             continue;
         if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != 'f')
-            retur false;
+            return false;
     }
     return true;
 }
@@ -48,7 +41,7 @@ bool    Scalar::isDouble(std::string const& str)
 {
     if (str.find('.') == std::string::npos)
         return false;
-    for (size_t i = 0; i < std.lenght(); i++)
+    for (size_t i = 0; i < str.length(); i++)
     {
         if (str[i] == '-' && i == 0)
             continue;
@@ -65,6 +58,7 @@ bool	isExtreme(const std::string &str) {
 		if (str == pseudo[i])
 			return true;
   }
+    return false;
 }
 
 /*
@@ -92,7 +86,7 @@ void    Scalar::printChar( std::string const& str)
     std::cout   << "char: " << c << std::endl
                 << "int: " << static_cast<int>(c) << std::endl
                 << "float: " << static_cast<float>(c) << ".0f" << std::endl
-                << "double: " << static_cast<double>(c) << ".0" << std::end;
+                << "double: " << static_cast<double>(c) << ".0" << std::endl;
 }
 
 void    Scalar::printInt( std::string const& str)
@@ -102,29 +96,30 @@ void    Scalar::printInt( std::string const& str)
     std::cout   << "char: " << prepare_char(nbr) << std::endl
                 << "int: " << nbr << std::endl
                 << "float: " << static_cast<float>(nbr) << ".0f" << std::endl
-                << "double: " << static_cast<double>(nbr) << ".0" << std::end;
+                << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
 }
 
 void    Scalar::printFloat( std::string const& str)
 {
-    float     nbr = std::atof(str.c_str());
-
+   float     nbr = std::atof(str.c_str());
+    (void)nbr;
 }
 
 void    Scalar::printDouble( std::string const& str)
 {
     double     nbr = std::atof(str.c_str());
+    (void)nbr;
 
 }
 
-void    Scalar::printExtra( std:string const& str)
+void    Scalar::printExtra( std::string const& str)
 {
-
+    (void)str;
 }
 
-void    Scalar::printExtreme( std:string const& str)
+void    Scalar::printExtreme( std::string const& str)
 {
-
+    (void)str;
 }
 
 void	Scalar::convert( std::string const& str)

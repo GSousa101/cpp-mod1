@@ -1,12 +1,11 @@
-NAME		=	SupremePapers
+NAME		=	convertPlease
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX			:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
-FILES		:=	Bureaucrat	AForm	ShrubberyCreationForm	RobotomyRequestForm	\
-				PresidentialPardonForm
+FILES		:=	Scalar	
 
 SOURCE		:=	$(addprefix source/, $(FILES))	\
 				main

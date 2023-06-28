@@ -28,10 +28,7 @@ Scalar::~Scalar()
 
 Scalar &				Scalar::operator=( Scalar const & other )
 {
-	//if ( this != &other )
-	//{
-		//this->_value = other.getValue();
-	//}
+    (void)other;
 	return *this;
 }
 
@@ -45,6 +42,27 @@ std::ostream &			operator<<( std::ostream & o, Scalar const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+bool    isChar(std::string const& str)
+{
+        
+
+}
+
+bool    isInt(std::string const& str)
+{
+
+}
+
+bool    isFloat(std::string const& str)
+{
+
+}
+
+bool    isDouble(std::string const& str)
+{
+
+}
 
 void Scalar::castChar( char const *str )
 {

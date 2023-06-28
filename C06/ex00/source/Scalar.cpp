@@ -65,14 +65,14 @@ bool	isExtreme(const std::string &str) {
 ** --------------------------------- PREPARATION ----------------------------------
 */
 
-std::string    prepare_char(int nbr)
+void    put_char(int nbr)
 {
     if (nbr > std::numeric_limits<char>::max() || nbr < std::numeric_limits<char>::min())
-        return ("char : impossible");
+        std::cout << "char : impossible" << std::endl;
     else if (isprint(nbr))
-        return ("char: " + static_cast<char>(nbr));
+        std::cout << "char: " << static_cast<char>(nbr) << std::endl;
     else
-        return ("char: Non displayable");
+        std::cout << "char: Non displayable" << std::endl;
 }
 
 /*
@@ -93,8 +93,8 @@ void    Scalar::printInt( std::string const& str)
 {
     int     nbr = std::atoi(str.c_str());
 
-    std::cout   << "char: " << prepare_char(nbr) << std::endl
-                << "int: " << nbr << std::endl
+               put_char(nbr);
+    std::cout   << "int: " << nbr << std::endl
                 << "float: " << static_cast<float>(nbr) << ".0f" << std::endl
                 << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
 }

@@ -1,4 +1,4 @@
-#include "Scalar.hpp"
+#include "../include/Scalar.hpp"
 
 std::ostream &			operator<<( std::ostream & o, Scalar const & i )
 {
@@ -8,7 +8,7 @@ std::ostream &			operator<<( std::ostream & o, Scalar const & i )
 
 
 /*
-** --------------------------------- METHODS ----------------------------------
+** --------------------------------- CHECKERS ----------------------------------
 */
 
 bool    Scalar::isChar(std::string const& str)
@@ -56,28 +56,6 @@ bool    Scalar::isDouble(std::string const& str)
             return false;
     }
     return true;
-
-}
-
-void    Scalar::castChar( std::String const& str)
-{
-
-}
-
-void	Scalar::convert( std::string const& str)
-{
-    if (isChar(str))
-        printChar(str);
-    else if (isExtreme)
-        print(printExtreme(str));
-    else if (isInt(str))
-        printInt(str);
-    else if (isFloat(str))
-        printfloat(str);
-    else if (isDouble(str))
-        printDouble(str);
-    else 
-        printExtra(str);
 }
 
 bool	isExtreme(const std::string &str) {
@@ -87,6 +65,82 @@ bool	isExtreme(const std::string &str) {
 		if (str == pseudo[i])
 			return true;
   }
+}
+
+/*
+** --------------------------------- PREPARATION ----------------------------------
+*/
+
+std::string    prepare_char(int nbr)
+{
+    if (nbr > std::numeric_limits<char>::max() || nbr < std::numeric_limits<char>::min())
+        return ("char : impossible");
+    else if (isprint(nbr))
+        return ("char: " + static_cast<char>(nbr));
+    else
+        return ("char: Non displayable");
+}
+
+/*
+** --------------------------------- PRINTERS ----------------------------------
+*/
+
+void    Scalar::printChar( std::string const& str)
+{
+    char    c = str[0];
+
+    std::cout   << "char: " << c << std::endl
+                << "int: " << static_cast<int>(c) << std::endl
+                << "float: " << static_cast<float>(c) << ".0f" << std::endl
+                << "double: " << static_cast<double>(c) << ".0" << std::end;
+}
+
+void    Scalar::printInt( std::string const& str)
+{
+    int     nbr = std::atoi(str.c_str());
+
+    std::cout   << "char: " << prepare_char(nbr) << std::endl
+                << "int: " << nbr << std::endl
+                << "float: " << static_cast<float>(nbr) << ".0f" << std::endl
+                << "double: " << static_cast<double>(nbr) << ".0" << std::end;
+}
+
+void    Scalar::printFloat( std::string const& str)
+{
+    float     nbr = std::atof(str.c_str());
+
+}
+
+void    Scalar::printDouble( std::string const& str)
+{
+    double     nbr = std::atof(str.c_str());
+
+}
+
+void    Scalar::printExtra( std:string const& str)
+{
+
+}
+
+void    Scalar::printExtreme( std:string const& str)
+{
+
+}
+
+void	Scalar::convert( std::string const& str)
+{
+    if (isChar(str))
+        printChar(str);
+    // else if (isExtreme)
+        // print(printExtreme(str));
+    else if (isInt(str))
+        printInt(str);
+    // else if (isFloat(str))
+    //     printfloat(str);
+    // else if (isDouble(str))
+    //     printDouble(str);
+    // else 
+    //     printExtra(str);
 }
 
 /*

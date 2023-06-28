@@ -1,37 +1,5 @@
 #include "Scalar.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
-Scalar::Scalar()
-{
-}
-
-Scalar::Scalar( const Scalar & src )
-{
-}
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
-
-Scalar::~Scalar()
-{
-}
-
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-Scalar &				Scalar::operator=( Scalar const & other )
-{
-    (void)other;
-	return *this;
-}
-
 std::ostream &			operator<<( std::ostream & o, Scalar const & i )
 {
 	//o << "Value = " << i.getValue();
@@ -71,7 +39,7 @@ bool    Scalar::isFloat(std::string const& str)
         if (str[i] == '-' && i == 0)
             continue;
         if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != 'f')
-            return false;
+            retur false;
     }
     return true;
 }
@@ -96,6 +64,10 @@ void    Scalar::castChar( std::String const& str)
 
 }
 
+void	Scalar::convert( std::string const& str)
+{
+
+}
 
 bool	isPseudoLiteral(const std::string &literal) {
 	std::string pseudo[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
@@ -105,10 +77,6 @@ bool	isPseudoLiteral(const std::string &literal) {
 			return true;
   }
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
 
 /*
 ** ------------------------------- EXCEPTIONS --------------------------------

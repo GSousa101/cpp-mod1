@@ -7,12 +7,10 @@
 class Scalar
 {
 
-	public:
-		~Scalar( void );
-
 	private:
 		Scalar( void );
 		Scalar( Scalar const & src );
+		~Scalar( void );
 		Scalar &		operator=( Scalar const & other );
 
     static void convert(const std::string &literal);	
@@ -27,7 +25,8 @@ class Scalar
     void    castFloat( std::string const& str);
     void    castDouble( std::string const& str);
 
-
+    void    convert(std::string const& literal)
+    
     class InvalidConversionException : public std::exception {
     public:
         virtual const char *what() const throw();

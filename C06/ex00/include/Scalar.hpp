@@ -20,10 +20,10 @@ class Scalar
     bool    isFloat (std::string const& str);
     bool    isDouble (std::string const& str);
 
-    void    castChar( std::string const& str);
-    void    castInt( std::string const& str);
-    void    castFloat( std::string const& str);
-    void    castDouble( std::string const& str);
+    void    printChar( std::string const& str);
+    void    printInt( std::string const& str);
+    void    printFloat( std::string const& str);
+    void    printDouble( std::string const& str);
 
     void    convert(std::string const& literal)
     

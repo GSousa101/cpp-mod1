@@ -66,14 +66,25 @@ void    Scalar::castChar( std::String const& str)
 
 void	Scalar::convert( std::string const& str)
 {
-
+    if (isChar(str))
+        printChar(str);
+    else if (isExtreme)
+        print(printExtreme(str));
+    else if (isInt(str))
+        printInt(str);
+    else if (isFloat(str))
+        printfloat(str);
+    else if (isDouble(str))
+        printDouble(str);
+    else 
+        printExtra(str);
 }
 
-bool	isPseudoLiteral(const std::string &literal) {
+bool	isExtreme(const std::string &str) {
 	std::string pseudo[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
 
 	for (int i = 0; i < 6; i++) {
-		if (literal == pseudo[i])
+		if (str == pseudo[i])
 			return true;
   }
 }

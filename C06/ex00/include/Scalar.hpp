@@ -22,6 +22,10 @@ class Scalar
     bool    isFloat (std::string const& str);
     bool    isDouble (std::string const& str);
 
+    void    castChar( std::string const& str);
+    void    castInt( std::string const& str);
+    void    castFloat( std::string const& str);
+    void    castDouble( std::string const& str);
 
 
     class InvalidConversionException : public std::exception {

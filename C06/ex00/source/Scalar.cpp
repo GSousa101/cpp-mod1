@@ -81,9 +81,9 @@ void    putInt(int nbr)
 {
     std::numeric_limits<int>    intLimit;
 
-    if (nbr > intLimit.max() || nbr < intLimit.min() )
+    if (nbr > intLimit.max() || nbr < intLimit.min())
 		std::cout << "int: out of range." << std::endl;
-    if (isnan(nbr))
+    else if (isnan(nbr))
 		std::cout << "int: impossible." << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(nbr) << std::endl;
@@ -95,7 +95,7 @@ void    putFloat(float nbr)
 
     if (nbr > floatLimit.max() || nbr < floatLimit.min() )
 		std::cout << "float: out of range." << std::endl;
-    if (isnan(nbr))
+    else if (isnan(nbr))
 		std::cout << "float: impossible." << std::endl;
 	else
   		std::cout << std::setprecision(1) << std::fixed << "float: " << nbr << "f" << std::endl;
@@ -107,7 +107,7 @@ void    putDouble(double nbr)
 
     if (nbr > doubleLimit.max() || nbr < doubleLimit.min() )
 		std::cout << "double: out of range." << std::endl;
-    if (isnan(nbr))
+    else if (isnan(nbr))
 		std::cout << "double: impossible." << std::endl;
 	else
   		std::cout << std::setprecision(1) << std::fixed << "double: " << nbr << std::endl;

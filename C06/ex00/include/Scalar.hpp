@@ -23,24 +23,13 @@ class Scalar
     static bool    isInt (std::string const& str);
     static bool    isFloat (std::string const& str);
     static bool    isDouble (std::string const& str);
+    static bool    isExtreme (std::string const& str);
 
     static void    printChar( std::string const& str);
     static void    printInt( std::string const& str);
     static void    printFloat( std::string const& str);
     static void    printDouble( std::string const& str);
-    static void    printExtra( std::string const& str);
-    static void    printExtreme( std::string const& str);
-
-    
-    class InvalidConversionException : public std::exception {
-    public:
-        virtual const char *what() const throw();
-    };
-
-    class OverflowException : public std::exception {
-    public:
-        virtual const char *what() const throw();
-    };
+    static void    printExtreme( void );
 
 };
 

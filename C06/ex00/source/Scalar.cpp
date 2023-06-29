@@ -6,7 +6,7 @@
 
 bool    Scalar::isChar(std::string const& str)
 {
-    if (str.length() == 1 && std::isdigit(str[0] == 0))
+    if (str.length() == 1 && !std::isdigit(str[0]))
         return true;
     return false;
 }

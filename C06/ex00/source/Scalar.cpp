@@ -65,14 +65,16 @@ bool	isExtreme(const std::string &str) {
 ** --------------------------------- PREPARATION ----------------------------------
 */
 
-void    put_char(int nbr)
+void    put_char(double nbr)
 {
-    if (nbr > std::numeric_limits<char>::max() || nbr < std::numeric_limits<char>::min())
-        std::cout << "char : impossible" << std::endl;
-    else if (isprint(nbr))
-        std::cout << "char: " << static_cast<char>(nbr) << std::endl;
-    else
+    std::numeric_limits<char> charLimit;
+
+    if (nbr > charLimit.max() || nbr < charLimit.min())
+        std::cout << "char : out of range" << std::endl;
+    else if (!isprint(nbr))
         std::cout << "char: Non displayable" << std::endl;
+    else
+        std::cout << "char: " << static_cast<char>(nbr) << std::endl;
 }
 
 /*

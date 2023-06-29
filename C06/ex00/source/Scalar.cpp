@@ -51,7 +51,7 @@ bool    Scalar::isDouble(std::string const& str)
     return true;
 }
 
-bool	isExtreme(const std::string &str) {
+bool	Scalar::isExtreme(const std::string &str) {
 	std::string pseudo[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
 
 	for (int i = 0; i < 6; i++) {
@@ -84,7 +84,7 @@ void    putInt(int nbr)
     if (nbr > intLimit.max() || nbr < intLimit.min() )
 		std::cout << "int: out of range." << std::endl;
     if (isnan(nbr))
-		std::cout << "int: is not a number." << std::endl;
+		std::cout << "int: impossible." << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(nbr) << std::endl;
 }
@@ -96,7 +96,7 @@ void    putFloat(float nbr)
     if (nbr > floatLimit.max() || nbr < floatLimit.min() )
 		std::cout << "float: out of range." << std::endl;
     if (isnan(nbr))
-		std::cout << "float: is not a number." << std::endl;
+		std::cout << "float: impossible." << std::endl;
 	else
   		std::cout << std::setprecision(1) << std::fixed << "float: " << nbr << "f" << std::endl;
 }
@@ -108,7 +108,7 @@ void    putDouble(double nbr)
     if (nbr > doubleLimit.max() || nbr < doubleLimit.min() )
 		std::cout << "double: out of range." << std::endl;
     if (isnan(nbr))
-		std::cout << "double: is not a number." << std::endl;
+		std::cout << "double: impossible." << std::endl;
 	else
   		std::cout << std::setprecision(1) << std::fixed << "double: " << nbr << std::endl;
 }
@@ -157,44 +157,28 @@ void    Scalar::printDouble( std::string const& str)
     putDouble(nbr);
 }
 
-void    Scalar::printExtra( std::string const& str)
+void    Scalar::printExtreme()
 {
-    (void)str;
-}
-
-void    Scalar::printExtreme( std::string const& str)
-{
-    (void)str;
+	std::cout << "char: impossible" << std::endl
+	        << "int: impossible" << std::endl
+	        << "float: nanf" << std::endl
+	        << "double: nan" << std::endl;
 }
 
 void	Scalar::convert( std::string const& str)
 {
-    if (isChar(str))
+    if (isExtreme(str))
+        printExtreme();
+    else if (isChar(str))
         printChar(str);
-    // else if (isExtreme)
-        // print(printExtreme(str));
     else if (isInt(str))
         printInt(str);
     else if (isFloat(str))
         printFloat(str);
     else if (isDouble(str))
         printDouble(str);
-    // else 
-    //     printExtra(str);
-}
-
-/*
-** ------------------------------- EXCEPTIONS --------------------------------
-*/
-
-const char *Scalar::InvalidConversionException::what() const throw()
-{
-    return "Error: InvalidConversionException - Invalid conversion detected";
-}
-
-const char *Scalar::OverflowException::what() const throw()
-{
-    return "Error: OverflowException - Overflow detected";
+    else 
+        printExtreme();
 }
 
 /* ************************************************************************** */

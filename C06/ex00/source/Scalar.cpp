@@ -65,16 +65,52 @@ bool	isExtreme(const std::string &str) {
 ** --------------------------------- PREPARATION ----------------------------------
 */
 
-void    put_char(double nbr)
+void    putChar(double nbr)
 {
     std::numeric_limits<char> charLimit;
 
     if (nbr > charLimit.max() || nbr < charLimit.min())
-        std::cout << "char : out of range" << std::endl;
+        std::cout << "char: out of range." << std::endl;
     else if (!isprint(nbr))
-        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "char: Non displayable." << std::endl;
     else
         std::cout << "char: " << static_cast<char>(nbr) << std::endl;
+}
+
+void    putInt(int nbr)
+{
+    std::numeric_limits<int>    intLimit;
+
+    if (nbr > intLimit.max() || nbr < intLimit.min() )
+		std::cout << "int: out of range." << std::endl;
+    if (isnan(nbr))
+		std::cout << "int: is not a number." << std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(nbr) << std::endl;
+}
+
+void    putFloat(float nbr)
+{
+    std::numeric_limits<float>   floatLimit;
+
+    if (nbr > floatLimit.max() || nbr < floatLimit.min() )
+		std::cout << "float: out of range." << std::endl;
+    if (isnan(nbr))
+		std::cout << "float: is not a number." << std::endl;
+	else
+  		std::cout << std::setprecision(1) << std::fixed << "float: " << nbr << "f" << std::endl;
+}
+
+void    putDouble(double nbr)
+{
+    std::numeric_limits<double>   doubleLimit;
+
+    if (nbr > doubleLimit.max() || nbr < doubleLimit.min() )
+		std::cout << "double: out of range." << std::endl;
+    if (isnan(nbr))
+		std::cout << "double: is not a number." << std::endl;
+	else
+  		std::cout << std::setprecision(1) << std::fixed << "double: " << nbr << std::endl;
 }
 
 /*
@@ -95,23 +131,30 @@ void    Scalar::printInt( std::string const& str)
 {
     int     nbr = std::atoi(str.c_str());
 
-               put_char(nbr);
-    std::cout   << "int: " << nbr << std::endl
-                << "float: " << static_cast<float>(nbr) << ".0f" << std::endl
-                << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
+    putChar(nbr);
+    putInt(nbr);
+    putFloat(nbr);
+    putDouble(nbr);
 }
 
 void    Scalar::printFloat( std::string const& str)
 {
-   float     nbr = std::atof(str.c_str());
-    (void)nbr;
+    float     nbr = std::atof(str.c_str());
+
+    putChar(nbr);
+    putInt(nbr);
+    putFloat(nbr);
+    putDouble(nbr);
 }
 
 void    Scalar::printDouble( std::string const& str)
 {
     double     nbr = std::atof(str.c_str());
-    (void)nbr;
 
+    putChar(nbr);
+    putInt(nbr);
+    putFloat(nbr);
+    putDouble(nbr);
 }
 
 void    Scalar::printExtra( std::string const& str)
@@ -132,10 +175,10 @@ void	Scalar::convert( std::string const& str)
         // print(printExtreme(str));
     else if (isInt(str))
         printInt(str);
-    // else if (isFloat(str))
-    //     printfloat(str);
-    // else if (isDouble(str))
-    //     printDouble(str);
+    else if (isFloat(str))
+        printFloat(str);
+    else if (isDouble(str))
+        printDouble(str);
     // else 
     //     printExtra(str);
 }

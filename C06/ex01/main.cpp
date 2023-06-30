@@ -9,10 +9,10 @@ int main( void )
 
     my_size_pointer = Serializer::serialize(my_data);
     if ( Serializer::deserialize(my_size_pointer) == my_data)
-        std::cout << "It was serialized and deseliazed with success" << std::endl;
+        std::cout << "It was serialized and deserialiazed with success" << std::endl;
     else
         std::cout << "Some information was missed" << std::endl;
     
-
+    delete (my_data);
     return (0);
 }

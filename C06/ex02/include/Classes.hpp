@@ -1,6 +1,10 @@
 #ifndef CLASSES_HPP
 # define CLASSES_HPP
 
+# include <iostream>
+# include <cstdlib>
+# include <ctime>
+
 class Base{
     public:
         virtual	~Base(void);

@@ -26,9 +26,7 @@ class Scalar
     static bool    isExtreme (std::string const& str);
 
     static void    printChar( std::string const& str);
-    static void    printInt( std::string const& str);
-    static void    printFloat( std::string const& str);
-    static void    printDouble( std::string const& str);
+    static void    printNumber( std::string const& str);
     static void    printExtreme( void );
 
 };

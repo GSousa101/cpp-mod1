@@ -77,7 +77,7 @@ void    putChar(double nbr)
         std::cout << "char: " << static_cast<char>(nbr) << std::endl;
 }
 
-void    putInt(int nbr)
+void    putInt(double nbr)
 {
     std::numeric_limits<int>    intLimit;
 
@@ -98,7 +98,7 @@ void    putFloat(float nbr)
     else if (isnan(nbr))
 		std::cout << "float: impossible." << std::endl;
 	else
-  		std::cout << std::setprecision(1) << std::fixed << "float: " << nbr << "f" << std::endl;
+  		std::cout << std::setprecision(1) << std::fixed << "float: " << static_cast<float>(nbr) << "f" << std::endl;
 }
 
 void    putDouble(double nbr)
@@ -110,7 +110,7 @@ void    putDouble(double nbr)
     else if (isnan(nbr))
 		std::cout << "double: impossible." << std::endl;
 	else
-  		std::cout << std::setprecision(1) << std::fixed << "double: " << nbr << std::endl;
+  		std::cout << std::setprecision(1) << std::fixed << "double: " << static_cast<double>(nbr) << std::endl;
 }
 
 /*
@@ -127,27 +127,7 @@ void    Scalar::printChar( std::string const& str)
                 << "double: " << static_cast<double>(c) << ".0" << std::endl;
 }
 
-void    Scalar::printInt( std::string const& str)
-{
-    int     nbr = std::atoi(str.c_str());
-
-    putChar(nbr);
-    putInt(nbr);
-    putFloat(nbr);
-    putDouble(nbr);
-}
-
-void    Scalar::printFloat( std::string const& str)
-{
-    float     nbr = std::atof(str.c_str());
-
-    putChar(nbr);
-    putInt(nbr);
-    putFloat(nbr);
-    putDouble(nbr);
-}
-
-void    Scalar::printDouble( std::string const& str)
+void    Scalar::printNumber( std::string const& str)
 {
     double     nbr = std::atof(str.c_str());
 
@@ -171,12 +151,8 @@ void	Scalar::convert( std::string const& str)
         printExtreme();
     else if (isChar(str))
         printChar(str);
-    else if (isInt(str))
-        printInt(str);
-    else if (isFloat(str))
-        printFloat(str);
-    else if (isDouble(str))
-        printDouble(str);
+    else if (isInt(str) || isFloat(str) || isDouble(str))
+        printNumber(str);
     else 
         printExtreme();
 }

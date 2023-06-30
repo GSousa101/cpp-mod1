@@ -93,7 +93,7 @@ void    putFloat(float nbr)
 {
     std::numeric_limits<float>   floatLimit;
 
-    if (nbr > floatLimit.max() || nbr < floatLimit.min() )
+    if (nbr > floatLimit.max() || nbr < -floatLimit.max() )
 		std::cout << "float: out of range." << std::endl;
     else if (isnan(nbr))
 		std::cout << "float: impossible." << std::endl;
@@ -105,7 +105,7 @@ void    putDouble(double nbr)
 {
     std::numeric_limits<double>   doubleLimit;
 
-    if (nbr > doubleLimit.max() || nbr < doubleLimit.min() )
+    if (nbr > doubleLimit.max() || nbr < -doubleLimit.max() )
 		std::cout << "double: out of range." << std::endl;
     else if (isnan(nbr))
 		std::cout << "double: impossible." << std::endl;

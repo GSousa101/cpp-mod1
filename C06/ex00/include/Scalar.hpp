@@ -19,15 +19,15 @@ class Scalar
 		~Scalar( void );
 		Scalar &		operator=( Scalar const & other );
 
-    static bool    isChar (std::string const& str);
-    static bool    isInt (std::string const& str);
-    static bool    isFloat (std::string const& str);
-    static bool    isDouble (std::string const& str);
-    static bool    isExtreme (std::string const& str);
+        static bool    isChar (std::string const& str);
+        static bool    isInt (std::string const& str);
+        static bool    isFloat (std::string const& str);
+        static bool    isDouble (std::string const& str);
+        static bool    isExtreme (std::string const& str);
 
-    static void    printChar( std::string const& str);
-    static void    printNumber( std::string const& str);
-    static void    printExtreme( void );
+        static void    printChar( std::string const& str);
+        static void    printNumber( std::string const& str);
+        static void    printExtreme( void );
 
 };
 

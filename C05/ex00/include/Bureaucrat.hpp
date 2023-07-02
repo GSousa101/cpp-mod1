@@ -14,8 +14,6 @@ class Bureaucrat
 				Bureaucrat( std::string newName, int grade);
 				Bureaucrat( Bureaucrat const& other );
 		virtual	~Bureaucrat();
-
-		// Operator Overload
 		Bureaucrat&		operator=( Bureaucrat const& other );
 
 		// Getters

@@ -37,8 +37,8 @@ void            RobotomyRequestForm::action( Bureaucrat const& executor ) const
 {
 	AForm::execute(executor);
 	std::cout << "Brrrrrrrrrzzzzz *drilling noises*" << std::endl;
-	srand(time(NULL));
-	if (rand() % 2)
+    std::srand(std::time(NULL));
+	if (std::rand() % 2)
 		std::cout << this->target << " has been robotomized successfully!!" << std::endl;
 	else
 		std::cout << this->target << " is still a simple human." << std::endl;

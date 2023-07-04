@@ -5,8 +5,6 @@ CXX			:=	c++
 CPPFLAGS	:=	-Wextra -Wall -Werror -std=c++98
 
 ## --------------------------------- SOURCE ----------------------------------
-FILES		:=	Scalar	
-
 SOURCE		:=	main
 
 SOURCES		:=	$(addsuffix .cpp, $(SOURCE))

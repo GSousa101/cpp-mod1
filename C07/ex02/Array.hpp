@@ -1,16 +1,19 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+#include <iostream>
+#include <string>
+
 template <typename T>
 class Array {
     public:
-                Array( void );
-                Array( size_t size);
-                Array( Array const& other);
-        virtual ~Array( void );
+                Array<T>( void );
+                Array<T>( size_t size);
+                Array<T>( Array const& other);
+        virtual ~Array<T>( void );
 
-        Array   &operator=(Array const& other);
-        T const &operator[](Array const& other);
+        Array   &operator=(Array<T> const& other);
+        T       &operator[](Array<T> const& other);
 
         size_t  size( void ) const;
 
@@ -20,7 +23,7 @@ class Array {
         };
 
     private:
-        size_t _lenght;
+        size_t  _lenght;
         T       *_elements;
         
 };

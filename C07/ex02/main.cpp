@@ -1,21 +1,19 @@
-#include "iter.hpp"
+#include "Array.hpp"
 
-void    marlowSays(std::string const& str)
+int main(void) {
 {
-    std::cout << "In a hurricane Marlow says " << str << ". DO OR DIE!" << std::endl;
+    Array<int> numbers(10);
+
+    try {
+        for (unsigned int i = 0; i < numbers.size(); i++)
+        {
+            numbers[i] = (i + 1) * 11;
+            std::cout << numbers[i] << std::endl;
+        }
+        std::cout << numbers[numbers.size() + 1] << std::endl;
+    } catch (std::exception &err)
+    {
+        std::cerr << err.what() << std::endl;
+    }
 }
-
-void    isEven( const int& num)
-{
-    std::cout << num << " is even: " << std::boolalpha << (num % 2 == 0) << std::endl;
-}
-
-int main( void )
-{
-    int nbArray[] = {1, 4, 54, 99, 342, 2, 5, 6534, 12, 91};
-    std::string strArray[] = { "Hull", "Mast", "Rudder", "Keel", "Bow" };
-
-    ::iter<int>(nbArray, 8, isEven);
-    ::iter<std::string>(strArray, 5, marlowSays);
-    return 0;
 }

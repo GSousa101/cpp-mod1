@@ -13,11 +13,11 @@ class Array {
         virtual ~Array<T>( void );
 
         Array   &operator=(Array<T> const& other);
-        T       &operator[](Array<T> const& other);
+        T       &operator[](size_t index);
 
         size_t  size( void ) const;
 
-        class OutOfBoundsException : public std::exception {
+        class OutOfRangeException : public std::exception {
         public:
             virtual const char* what( void ) const throw();
         };
@@ -27,5 +27,7 @@ class Array {
         T       *_elements;
         
 };
+
+#include "Array.tpp"
 
 #endif

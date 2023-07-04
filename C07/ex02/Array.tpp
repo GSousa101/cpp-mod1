@@ -1,4 +1,4 @@
-#includle "Array.hpp"
+#include "Array.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -50,14 +50,14 @@ Array<T>&       Array<T>::operator=( Array<T> const& other ) {
             this->_elements[i] = other._elements[i];
         this->_lenght = other.size();
     }
-    return *this);
+    return *this;
 }
 
 template <typename T>
 T&          Array<T>::operator[]( size_t index) {
     if (index >= this->size())
         throw Array::OutOfRangeException();
-    return this->_elements[index]
+    return this->_elements[index];
 }
 
 /*
@@ -65,7 +65,7 @@ T&          Array<T>::operator[]( size_t index) {
 */
 
 template <typename T>
-size_t      Array<t>::size() const {
+size_t      Array<T>::size( void ) const {
     return this->_lenght;
 }
 

@@ -28,15 +28,15 @@ Base*   generate( void )
 
 void    identify( Base* p)
 {
-    if (dynamic_cast<A*>(p) != nullptr)
+    if (dynamic_cast<A*>(p) != NULL)
         return printMessage("Identify by pointer: A class");
-    if (dynamic_cast<B*>(p) != nullptr)
+    if (dynamic_cast<B*>(p) != NULL)
         return printMessage("Identify by pointer: B class");
-    if (dynamic_cast<C*>(p) != nullptr)
+    if (dynamic_cast<C*>(p) != NULL)
         return printMessage("Identify by pointer: C class");
 }
 
-void    indentify( Base& p)
+void    identify( Base& p)
 {
     Base    tmp;
     try 

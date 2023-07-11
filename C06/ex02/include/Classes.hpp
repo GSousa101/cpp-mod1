@@ -2,8 +2,9 @@
 # define CLASSES_HPP
 
 # include <iostream>
-# include <cstdlib>
 # include <ctime>
+# include <cstdlib>
+# include <exception>
 
 class Base{
     public:

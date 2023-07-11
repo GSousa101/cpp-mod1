@@ -9,7 +9,7 @@
 #include <deque>
 
 template <typename T>
-typename T::iterator        easyfind(T& conttainer, int& value);
+typename T::iterator        easyfind(T& conttainer, int value);
 
 
 class   ValueNotFound : std::exception {

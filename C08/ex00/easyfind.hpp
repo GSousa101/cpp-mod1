@@ -1,3 +1,5 @@
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 #include <algorithm>
 #include <iostream>
@@ -10,7 +12,11 @@ template <typename T>
 typename T::iterator        easyfind(T& conttainer, int& value);
 
 
-class   ValueNotFound :: std:exception {
+class   ValueNotFound : std::exception {
 public:
     const char*     what() const throw();
-}  
+};
+
+#include "easyfind.tpp"
+
+#endif

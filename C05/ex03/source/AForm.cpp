@@ -120,7 +120,7 @@ AForm::NotPermittedToExecuteException::NotPermittedToExecuteException() :
 
 const char*	AForm::NotPermittedToExecuteException::what() const throw()
 {
-	return (RED "Form is not signed to be executed." RESET);
+	return _message;
 }
 
 /*

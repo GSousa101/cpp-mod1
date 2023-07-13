@@ -1,6 +1,11 @@
 #ifndef SPAN_HPP
 #define SNAP_HPP
 
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+#include <vector>
+#include <cmath>
 
 class Span {
 public:
@@ -22,6 +27,10 @@ private:
     
 
     class   MaxLenghtReached : public std::exception {
+        public:
+            virtual const char*     what() const throw();
+    }
+    class   notEnoughNumbers : public std::exception {
         public:
             virtual const char*     what() const throw();
     }

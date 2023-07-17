@@ -63,6 +63,8 @@ int     Span::longestSpan() {
     if (this->_myVector.size() <= 1)
         throw notEnoughNumbers();
     std::vector<int>    myCopy(this->_myVector);
+    // std::cout << myCopy.begin() << std::endl;
+    // std::cout << myCopy.end() << std::endl;
     std::sort(myCopy.begin(), myCopy.end());
     return std::abs(myCopy.end() - myCopy.begin());
 }

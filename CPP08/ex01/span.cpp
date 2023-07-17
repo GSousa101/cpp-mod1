@@ -70,7 +70,7 @@ int     Span::longestSpan() {
     // std::cout << myCopy.begin() << std::endl;
     // std::cout << myCopy.end() << std::endl;
     std::sort(myCopy.begin(), myCopy.end());
-    return std::abs(myCopy.end() - myCopy.begin());
+    return std::abs(*(myCopy.end()- 1) - *(myCopy.begin()));
 }
 
 const char*     Span::MaxLenghtReached::what() const throw() {

@@ -53,12 +53,9 @@ int     Span::shortestSpan() {
     int     shortest = std::numeric_limits<int>::max();
     for (int i = 1; i < static_cast<int>(myCopy.size()); i++)
     {
-        // std::cout << "Next -> " << myCopy[i] << std::endl;
-        // std::cout << "Atual -> " << myCopy[i - 1] << std::endl;
         int     actualShort = myCopy[i] - myCopy[i - 1]; 
         shortest = std::min(shortest, actualShort);
-        // std::cout << std::endl << "shortest -> " << shortest << std::endl;
-        // std::cout << "Actual short -> " << actualShort << std::endl;
+
     }
     return std::abs(shortest);
 }
@@ -67,8 +64,6 @@ int     Span::longestSpan() {
     if (this->_myVector.size() <= 1)
         throw notEnoughNumbers();
     std::vector<int>    myCopy(this->_myVector);
-    // std::cout << myCopy.begin() << std::endl;
-    // std::cout << myCopy.end() << std::endl;
     std::sort(myCopy.begin(), myCopy.end());
     return std::abs(*(myCopy.end()- 1) - *(myCopy.begin()));
 }

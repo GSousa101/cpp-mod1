@@ -27,12 +27,27 @@ int main( void ) {
         for (int i = 0; i < 990; i++) {
           numbers.push_back(i);
         }
-        numbers.push_back(9000);
         slots.addRange(numbers.begin(), numbers.end());
         std::cout << "My shortie: " << slots.shortestSpan() << std::endl;
         std::cout << "My longgie " << slots.longestSpan() << std::endl;
-  } catch (std::exception& e) {
+    }
+    catch (std::exception& e) {
         std::cout << e.what() << std::endl;
-  }
+    }
+    try
+    {
+        std::cout << std::endl << "------- THIRD TEST -------" << std::endl;
+        Span slots(100);
+        std::vector<int> numbers;
+        for (int i = 0; i < 100; i++) {
+          numbers.push_back(i);
+        }
+        slots.addRange(numbers.begin(), numbers.end());
+        std::cout << "My shortie: " << slots.shortestSpan() << std::endl;
+        std::cout << "My longgie " << slots.longestSpan() << std::endl;
+    }
+        catch (std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
     return (0);
 }

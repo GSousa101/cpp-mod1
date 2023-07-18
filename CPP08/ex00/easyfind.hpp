@@ -12,9 +12,9 @@ template <typename T>
 typename T::iterator        easyfind(T& conttainer, int value);
 
 
-class   ValueNotFound : std::exception {
+class   ValueNotFound : public std::exception {
 public:
-    const char*     what() const throw();
+    virtual const char*     what() const throw();
 };
 
 #include "easyfind.tpp"

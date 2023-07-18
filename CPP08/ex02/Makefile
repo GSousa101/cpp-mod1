@@ -1,4 +1,4 @@
-NAME		=	span
+NAME		=	mutantStack
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX			:=	c++

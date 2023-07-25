@@ -4,7 +4,6 @@
 # include <iostream>
 # include "Color.hpp"
 
-
 class Animal {
 protected:
     std::string _type;

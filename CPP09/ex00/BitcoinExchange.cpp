@@ -21,7 +21,7 @@ BitcoinExchange::~BitcoinExchange()
 /**
  * -------------- METHODS ------------------
 */
-void BitcoinExchange::parseDataFile()
+void BitcoinExchange::parseDataFile( void )
 {
     std::ifstream inputFile("data.csv");
     std::string currentLine;
@@ -66,4 +66,41 @@ bool BitcoinExchange::isValidDate(std::string const& date)
         return false;    
     }
     return true;
+}
+
+
+void BitcoinExchange::handleExchangeFileLine(const std::string &line) {
+    if (!isValidLine(line))
+        return;
+    int pipeIndex = line.find('|');
+
+    std::string date = line.substr(0, pipeIndex);
+    if (!isValidDate(date))
+        return;
+
+    std::string rateStr = line.substr(pipeIndex + 1);
+    if (!isRateValid(rateStr)) return;
+
+    std::string dateWithoutFinalSpace = date.substr(0, 10);
+    float rate = std::atof(rateStr.c_str());
+
+    float exchangeRate = rate * (--this->_map.upper_bound(dateWithoutFinalSpace))->second;
+
+    std::cout << dateWithoutFinalSpace << " => " << rate << " = " << exchangeRate << std::endl;
+}
+
+void BitcoinExchange::processExchangeFile(const std::string &filename) {
+    std::ifstream   inputFile(filename);
+    std::string     currentLine;
+    int             count = 0;
+
+    getline(inputFile, currentLine);
+    while (getline(inputFile, currentLine)) {
+            handleExchangeFileLine(currentLine);
+    }
+}
+
+void    BitcoinExchange::calculateValue(std::string const& filename) {
+    this->parseDataFile();
+    this->processExchangeFile(filename);
 }

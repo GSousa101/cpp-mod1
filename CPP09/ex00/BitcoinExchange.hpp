@@ -13,10 +13,10 @@ class BitcoinExchange {
         ~BitcoinExchange();
 
         // Methods
-        void parseDataFile();
-        bool BitcoinExchange::isValidDate(std::string const& date);
+        void    parseDataFile();
+        bool    isValidDate(std::string const& date);
 
     private:
-        std::map<std::string, float> _map;
+        std::map<std::string, float>    _map;
 
 };

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <algorithm>    
 
 class BitcoinExchange {
     public:
@@ -13,6 +14,7 @@ class BitcoinExchange {
 
         // Methods
         void parseDataFile();
+        bool BitcoinExchange::isValidDate(std::string const& date);
 
     private:
         std::map<std::string, float> _map;

@@ -1,4 +1,4 @@
-NAME		=	easyfind
+NAME		=	bitcoinExchange
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX			:=	c++

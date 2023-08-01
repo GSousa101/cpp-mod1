@@ -1,4 +1,4 @@
-NAME		=	bitcoinExchange
+NAME		=	btc
 
 ## --------------------------------- COMPILERS & FLAGS ----------------------------------
 CXX			:=	c++

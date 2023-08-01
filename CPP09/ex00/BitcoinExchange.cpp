@@ -32,7 +32,8 @@ static bool     isValidDate(std::string const& date)
 
     std::string validChars = "0123456789-";
     for (size_t i = 0; i < date.size() - 1; i++) {
-        if (validChars.find(date[i] < 0)) {
+        if (validChars.find(date[i]) == std::string::npos)
+        {
             std::cerr << "Error: This date has invalid characters: " << date << std::endl;
             return false;        
         }

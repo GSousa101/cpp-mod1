@@ -2,12 +2,13 @@
 
 bool isValidFile(std::string const& filename)
 {
-    std::ifstream inputFile(filename);
+    std::ifstream inputFile(filename.c_str());
     if (!inputFile
         || inputFile.peek() == std::ifstream::traits_type::eof())
     {
         return false;
     }
+    return true;
 }
 
 int main(int argc, char **argv)

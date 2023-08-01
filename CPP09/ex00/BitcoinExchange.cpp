@@ -18,8 +18,6 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 BitcoinExchange::~BitcoinExchange()
 {}
 
-
-
 // --------------- static functions for check errors ------------
 static bool     isValidDate(std::string const& date)
 {
@@ -118,7 +116,7 @@ void    BitcoinExchange::action(std::string const& filename)
 {
     this->fillDatabase();
 
-    std::ifstream   inputFile(filename);
+    std::ifstream   inputFile(filename.c_str());
     std::string     currentLine;
     getline(inputFile, currentLine);
     while (getline(inputFile, currentLine)) {

@@ -13,11 +13,11 @@ class BitcoinExchange {
         ~BitcoinExchange();
 
         // Methods
-        bool    isValidDate(std::string const& date);
         void    action(std::string const& filename);
 
     private:
         std::map<std::string, float>    _map;
         void    fillDatabase();
+        void    analyzeLine(std::string const& line);
 
 };

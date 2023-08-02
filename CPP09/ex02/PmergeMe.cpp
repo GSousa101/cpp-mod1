@@ -60,3 +60,49 @@ void insertionSort(std::vector<int>& vector, int left, int right) {
     vector[comparisonIndex] = currentValue;
   }
 }
+daniel e vitin
+
+void copyRemaining(std::vector<int>& vector, const std::vector<int>& arr, int startIndex, int endIndex) {
+  // Copy any remaining elements from the subarray
+  while (startIndex < endIndex)
+    vector[startIndex++] = arr[startIndex];
+}
+
+void mergeElements(std::vector<int>& vector, const std::vector<int>& leftArr, const std::vector<int>& rightArr, int leftSize, int rightSize) {
+  int i = 0; // Index for the left subarray
+  int j = 0; // Index for the right subarray
+  int k = 0; // Index for the merged array
+
+  // Compare and merge elements from the subarrays
+  while (i < leftSize && j < rightSize) {
+    if (leftArr[i] <= rightArr[j]) {
+      vector[k] = leftArr[i];
+      ++i;
+    } else {
+      vector[k] = rightArr[j];
+      ++j;
+    }
+    ++k;
+  }
+
+  // Call the copyRemaining function for both subarrays if needed
+  copyRemaining(vector, leftArr, k, leftSize);
+  copyRemaining(vector, rightArr, k, rightSize);
+}
+
+void merge(std::vector<int>& vector, int left, int middle, int right) {
+  // Calculate the sizes of the subarrays
+  int leftSize = middle - left + 1;
+  int rightSize = right - middle;
+
+  // Create temporary arrays for the left and right subarrays
+  std::vector<int> leftArr(leftSize);
+  std::vector<int> rightArr(rightSize);
+
+  // Copy data from the main array to the temporary subarrays
+  std::copy(vector.begin() + left, vector.begin() + middle + 1, leftArr.begin());
+  std::copy(vector.begin() + middle + 1, vector.begin() + right + 1, rightArr.begin());
+
+  // Merge the two subarrays back into the main array
+  mergeElements(vector, leftArr, rightArr, leftSize, rightSize);
+}

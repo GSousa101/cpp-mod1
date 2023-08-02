@@ -1,17 +1,29 @@
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
-int main(int argc, char **argv) {
-    if (argc != 2) {
-        std::cerr << "Usage: ./RPN \"<expression>\" " << std::endl;
-        return 1;
-    }
-    try {
-        int result = calculate(argv[1]);
-        std::cout << "Result: " << result << std::endl;
-    }
-    catch (std::exception const& e) {
-        std::cerr << "Error" << std::endl;
-        return 1;
-    }
-    return 0;
+int main(int argc, char** argv) {
+  try {
+    std::vector<int> vector;
+    std::deque<int> deque;
+
+    fillContainers(argv, argc, vector, deque);
+    printVector(vector, "before");
+
+    clock_t start_time = clock();
+    mergeSort(vector, 0, vector.size() - 1, 16);
+    double duration = (clock() - start_time) * 1000000.0 / CLOCKS_PER_SEC;
+
+    printVector(vector, "after");
+    std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << duration << " us" << std::endl;
+
+    start_time = clock();
+    mergeSort(deque, 0, deque.size() - 1, 16);
+    duration = (clock() - start_time) * 1000000.0 / CLOCKS_PER_SEC;
+
+    std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << duration << " us" << std::endl;
+
+  } catch (std::exception& e) {
+    std::cout << e.what() << std::endl;
+  }
+
+  return (0);
 }

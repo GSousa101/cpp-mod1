@@ -9,8 +9,8 @@ int main(int argc, char **argv) {
         int result = calculate(argv[1]);
         std::cout << "Result: " << result << std::endl;
     }
-    catch (std::exception e) {
-        std::cerr << "Invalid operator or numbers of operand." << std::endl;
+    catch (std::exception const& e) {
+        std::cerr << "Error" << std::endl;
         return 1;
     }
     return 0;

@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <cctype>
 
-static void     doRPN(std::stack<int> operandStack, std::string token) {
+static void     doRPN(std::stack<int> &operandStack, std::string token) {
     int operand2 = operandStack.top();
     operandStack.pop();
     int operand1 = operandStack.top();
@@ -43,10 +43,10 @@ static bool         stackHasTwoNumbers(std::stack<int> operandStack) {
 
 static bool         isNegative(std::string token)
 {
-    return ((token.size() > 1 && token[0] == '-' && isdigit(token[1])))
+    return ((token.size() > 1 && token[0] == '-' && isdigit(token[1])));
 }
 
-int                 calculate(const std::string& expression) {
+int                 calculate(std::string const& expression) {
     std::stack<int> operandStack;
 
     std::istringstream iss(expression);
@@ -61,6 +61,8 @@ int                 calculate(const std::string& expression) {
         {
             doRPN(operandStack, token);
         }
+        else
+            throw std::exception();
     }
 	if (operandStack.size() != 1)
 			throw std::exception();

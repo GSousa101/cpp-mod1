@@ -2,4 +2,4 @@
 
 #include <iostream>
 
-int     calculate(std::string expr);
+int     calculate(std::string const& expression);

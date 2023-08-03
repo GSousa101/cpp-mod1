@@ -8,12 +8,12 @@ void fillContainers(char **input, std::vector<int>& vec)
       for(int j = 0; input[i][j]; j++)
       {
           if(!isdigit(input[i][j]))
-              return ;
-      }
+      		throw std::invalid_argument("Invalid argument");
+	  }
       int nb = atoi(input[i]);
       if (nb < 0)
-          return ;
-      vec.push_back(nb);
+      	throw std::invalid_argument("Only positive number allowed");
+	  vec.push_back(nb);
       // deq.push_back(nb);
   }
 }
@@ -46,35 +46,37 @@ void insertionSort(std::vector<int>& vector, int left, int right) {
 }
 
 void sortTwoVectors(std::vector<int>& vector, const std::vector<int>& leftArr, const std::vector<int>& rightArr, int leftSize, int rightSize) {
-  int i = 0; // Index for the left subarray
-  int j = 0; // Index for the right subarray
-  int k = 0; // Index for the merged array
+  int iFirst = 0;
+  int iSecond = 0;
+  int iTotal = 0;
 
-  // Compare and merge elements from the subarrays
-  while (i < leftSize && j < rightSize) {
-    if (leftArr[i] <= rightArr[j]) {
-      vector[k] = leftArr[i];
-      ++i;
-    } else {
-      vector[k] = rightArr[j];
-      ++j;
+  while (iFirst < leftSize && iSecond < rightSize) {
+    if (leftArr[iFirst] <= rightArr[iSecond])
+    {
+      vector[iTotal] = leftArr[iFirst];
+      ++iFirst;
     }
-    ++k;
+    else
+    {
+      vector[iTotal] = rightArr[iSecond];
+      ++iSecond;
+    }
+    ++iTotal;
   }
 }
 
 void stickVectorTogether(std::vector<int>& vector, int left, int middle, int right) {
-  // Calculate the sizes of the subarrays
-  int leftSize = middle - left + 1;
-  int rightSize = right - middle;
+  int               leftSize = middle - left + 1;
+  std::vector<int>  leftArr(leftSize);
+  std::copy(vector.begin() + left,
+            vector.begin() + middle + 1,
+            leftArr.begin());
 
-  // Create temporary arrays for the left and right subarrays
-  std::vector<int> leftArr(leftSize);
-  std::vector<int> rightArr(rightSize);
-
-  // Copy data from the main array to the temporary subarrays
-  std::copy(vector.begin() + left, vector.begin() + middle + 1, leftArr.begin());
-  std::copy(vector.begin() + middle + 1, vector.begin() + right + 1, rightArr.begin());
+  int               rightSize = right - middle;
+  std::vector<int>  rightArr(rightSize);
+  std::copy(vector.begin() + middle + 1,
+            vector.begin() + right + 1,
+            rightArr.begin());
 
   // Merge the two subarrays back into the main array
   sortTwoVectors(vector, leftArr, rightArr, leftSize, rightSize);
@@ -84,11 +86,11 @@ void mergeSort(std::vector<int>& vector, int left, int right, int threshold) {
   int middle = (left + right) / 2;
   if (right - left > threshold)
   {
-  std::cout << "here" << std::endl;
     mergeSort(vector, left, middle, threshold);
     mergeSort(vector, middle + 1, right, threshold);
   }
-  else {
+  else
+  {
     insertionSort(vector, left, right);
   }
   stickVectorTogether(vector, left, middle, right);

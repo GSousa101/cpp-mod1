@@ -1,47 +1,31 @@
 #include "PmergeMe.hpp"
 
-
-
-
-void loadContainers(char **input)
+void fillContainers(char **input, std::vector<int>& vec)
 {
-    for(size_t i = 1; input[i]; i++)
-    {
-        // Change for find valid chars
-        for(int j = 0; input[i][j]; j++)
-        {
-            if(!isdigit(input[i][j]))
-                throw InputError();
-        }
-        int nb = atoi(input[i]);
-        if (nb < 0)
-            throw InputError();
-        vec.push_back(nb);
-        deq.push_back(nb);
-    }
+  for(size_t i = 1; input[i]; i++)
+  {
+      // Change for find valid chars
+      for(int j = 0; input[i][j]; j++)
+      {
+          if(!isdigit(input[i][j]))
+              return ;
+      }
+      int nb = atoi(input[i]);
+      if (nb < 0)
+          return ;
+      vec.push_back(nb);
+      // deq.push_back(nb);
+  }
 }
 
 void printVector(std::vector<int> const& vector, const std::string& type)
 {
   std::cout << (type == "before" ? "Before: " : "After: ");
   for (std::vector<int>::const_iterator it = vector.begin();
-        it < vector.end();
-        it++)
+        it != vector.end();
+        ++it)
     std::cout << *it << " ";
   std::cout << std::endl;
-}
-
-void mergeSort(std::vector<int>& vector, int left, int right, int threshold) {
-  if (right - left > threshold)
-  {
-    int middle = (left + right) / 2;
-    mergeSort(vector, left, middle, threshold);
-    mergeSort(vector, middle + 1, right, threshold);
-    merge(vector, left, middle, right);
-  }
-  else {
-    insertionSort(vector, left, right);
-  }
 }
 
 void insertionSort(std::vector<int>& vector, int left, int right) {
@@ -60,15 +44,8 @@ void insertionSort(std::vector<int>& vector, int left, int right) {
     vector[comparisonIndex] = currentValue;
   }
 }
-daniel e vitin
 
-void copyRemaining(std::vector<int>& vector, const std::vector<int>& arr, int startIndex, int endIndex) {
-  // Copy any remaining elements from the subarray
-  while (startIndex < endIndex)
-    vector[startIndex++] = arr[startIndex];
-}
-
-void mergeElements(std::vector<int>& vector, const std::vector<int>& leftArr, const std::vector<int>& rightArr, int leftSize, int rightSize) {
+void sortTwoVectors(std::vector<int>& vector, const std::vector<int>& leftArr, const std::vector<int>& rightArr, int leftSize, int rightSize) {
   int i = 0; // Index for the left subarray
   int j = 0; // Index for the right subarray
   int k = 0; // Index for the merged array
@@ -84,13 +61,9 @@ void mergeElements(std::vector<int>& vector, const std::vector<int>& leftArr, co
     }
     ++k;
   }
-
-  // Call the copyRemaining function for both subarrays if needed
-  copyRemaining(vector, leftArr, k, leftSize);
-  copyRemaining(vector, rightArr, k, rightSize);
 }
 
-void merge(std::vector<int>& vector, int left, int middle, int right) {
+void stickVectorTogether(std::vector<int>& vector, int left, int middle, int right) {
   // Calculate the sizes of the subarrays
   int leftSize = middle - left + 1;
   int rightSize = right - middle;
@@ -104,5 +77,19 @@ void merge(std::vector<int>& vector, int left, int middle, int right) {
   std::copy(vector.begin() + middle + 1, vector.begin() + right + 1, rightArr.begin());
 
   // Merge the two subarrays back into the main array
-  mergeElements(vector, leftArr, rightArr, leftSize, rightSize);
+  sortTwoVectors(vector, leftArr, rightArr, leftSize, rightSize);
+}
+
+void mergeSort(std::vector<int>& vector, int left, int right, int threshold) {
+  int middle = (left + right) / 2;
+  if (right - left > threshold)
+  {
+  std::cout << "here" << std::endl;
+    mergeSort(vector, left, middle, threshold);
+    mergeSort(vector, middle + 1, right, threshold);
+  }
+  else {
+    insertionSort(vector, left, right);
+  }
+  stickVectorTogether(vector, left, middle, right);
 }

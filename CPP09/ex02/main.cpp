@@ -3,9 +3,13 @@
 int main(int argc, char** argv) {
   try {
     std::vector<int> vector;
-    std::deque<int> deque;
+    // std::deque<int> deque;
 
-    fillContainers(argv, argc, vector, deque);
+    if (argc == 1) {
+      std::cout << "Usage: ./Pmerge <numbers>" << std::endl;
+      return 1;
+    }
+    fillContainers(argv, vector);
     printVector(vector, "before");
 
     clock_t start_time = clock();
@@ -15,11 +19,11 @@ int main(int argc, char** argv) {
     printVector(vector, "after");
     std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << duration << " us" << std::endl;
 
-    start_time = clock();
-    mergeSort(deque, 0, deque.size() - 1, 16);
-    duration = (clock() - start_time) * 1000000.0 / CLOCKS_PER_SEC;
+    // start_time = clock();
+    // mergeSort(deque, 0, deque.size() - 1, 16);
+    // duration = (clock() - start_time) * 1000000.0 / CLOCKS_PER_SEC;
 
-    std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << duration << " us" << std::endl;
+    // std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << duration << " us" << std::endl;
 
   } catch (std::exception& e) {
     std::cout << e.what() << std::endl;

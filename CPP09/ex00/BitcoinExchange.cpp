@@ -92,7 +92,7 @@ void        BitcoinExchange::analyzeLine(std::string const& line) {
         return;
 
     float           value = std::atof(valueStr.c_str());
-    std::string     date = date.substr(0, 10);
+    std::string     date = line.substr(0, 10);
 
     float theDayRate = (--this->_map.upper_bound(date))->second;
     float totalExchange = value * theDayRate;
